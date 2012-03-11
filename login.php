@@ -22,9 +22,10 @@ if ( isset($_POST['submit']) ) {
 			$expiration = time() + 90 * 24 * 60 * 60;
 
            // Création des cookies
-           //setcookie("ID_UTILISATEUR", $row["id"], $expiration, "/");
+           setcookie("user_id", $row["id"], $expiration, "/");
+
            // Redirection de l'utilisateur	           
-           header( "location: profil.php?id=".$row["id"] ."" );
+           header( "location: profil.php" );
 		}
 }
 

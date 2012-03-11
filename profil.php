@@ -1,10 +1,29 @@
 <?php 
 	include_once('includes/db_connect.php');
+	include_once('includes/functions.php');
 
-	//echo $_COOKIE['ID_UTILISATEUR']);
-	$id = $_GET['id'];
+	if ( isset($_POST['submit']) ) {
+		$stripdonnees = strip($_POST['nom'],$_POST['prenom']);
 
-	$reponse = mysql_query("SELECT * FROM user WHERE id =". $id );
+		if ( empty($stripdonnees['nom']) || preg_match("^[A-Za-z0-9_\ ]{4,20}$",$stripdonnees['nom']) )
+		 {
+			 $message .= "Votre nom doit comporter entre 4 et 20 caractères<br />" ; 
+		 } 
+		 if ( empty($stripdonnees['prenom']) || preg_match("^[A-Za-z0-9_\ ]{4,20}$",$stripdonnees['prenom']) ) 
+		 {
+			 $message .= "Votre prenom doit comporter entre 4 et 20 caractères<br />" ; 
+		 }
+		 else {
+		 	$sql = "UPDATE user
+		 			SET nom = '" . $stripdonnees['nom'] . "',
+		 			prenom = '" . $stripdonnees['prenom'] . "'
+		 			WHERE id=" . $_COOKIE["user_id"];
+		 	echo $sql;		
+		 	//mysql_query($sql) or die (mysql_error());
+		 }
+	}
+
+	$reponse = mysql_query("SELECT * FROM user WHERE id =". $_COOKIE["user_id"] );
 	$donnees = mysql_fetch_array($reponse);
 ?>
 <html>
@@ -13,14 +32,18 @@
 </head>
 
 <body>
-<form action="http://<?= $_SERVER["SERVER_NAME"] . $_SERVER["SCRIPT_NAME"]; ?>" method="post">
-
+<? if(isset($message)) { ?>
+<p>
+	<?= $message; ?>
+</p>
+<? } if($masquer_formulaire != true) { ?>
+<form name="s_profil" method="post" action="profil.php">
 	<fieldset>
 		<legend>Profil</legend>
-		<label for="Nom">Nom:</label>
-		<input type="text" name="Nom" value="<?php echo $donnees['nom']; ?>" alt="Nom" title="Entrez votre nom de famille"/>
-		<label for="Prenom">Pr&eacute;nom:</label>
-		<input type="text" name="Prenom" value="<?php echo $donnees['prenom']; ?>" alt="Prenom" title="Entrez votre prénom"/>
+		<label for="nom">Nom:</label>
+		<input type="text" name="nom" id="nom" value="<?php echo $donnees['nom']; ?>" alt="Nom" title="Entrez votre nom de famille"/>
+		<label for="prenom">Pr&eacute;nom:</label>
+		<input type="text" name="prenom" id="prenom" value="<?php echo $donnees['prenom']; ?>" alt="Prenom" title="Entrez votre prénom"/>
 	</fieldset>
 	<fieldset>
 		<legend>Champs fixes</legend>
@@ -31,5 +54,6 @@
 	</fieldset>
 	<input type="submit" id="submit" name="submit" value="Mettre a jour votre profil" />
 </form>
+<?php } ?>
 </body>
 </html>
