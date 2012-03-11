@@ -1,9 +1,9 @@
 <html>
 <head>
-	<title>profil</title>
+	<title>Profil | Trashsquare</title>
 </head>
 <?php 
-	include_once('db_connect.php');
+	include_once('includes/db_connect.php');
 
 echo $_COOKIE['ID_UTILISATEUR']);
 

@@ -1,9 +1,9 @@
 <html>
 <head>
-	<title></title>
+	<title>Login | Trashsquare</title>
 </head>
 <?php 
-include_once('db_connect.php');
+include_once('includes/db_connect.php');
 if ( isset($_POST['submit']) ) {
 
 	if ( !isset($_POST['login']) || !isset($_POST['mdp']) ) {

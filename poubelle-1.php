@@ -1,10 +1,10 @@
 <html>
 <head>
-	<title></title>
+	<title>Poubelle 1 | Trashsquare</title>
 </head>
 
 <?php
-include_once('db_connect.php');
+include_once('includes/db_connect.php');
 // Formulaire visible par défaut
 $masquer_formulaire = false;
 
