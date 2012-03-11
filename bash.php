@@ -2,7 +2,7 @@
 
 include_once('db_connect.php');
 
-// 3. Perform database query
+
 $i = 1;
 while ($i <= 300) {
 
