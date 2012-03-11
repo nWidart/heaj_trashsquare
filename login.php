@@ -1,7 +1,3 @@
-<html>
-<head>
-	<title>Login | Trashsquare</title>
-</head>
 <?php 
 include_once('includes/db_connect.php');
 if ( isset($_POST['submit']) ) {
@@ -31,12 +27,17 @@ if ( isset($_POST['submit']) ) {
            // Redirection de l'utilisateur	
            
            // http_redirect("www.google.be");
-           header( "refresh:5;url=profil.php" );
-           echo 'You\'ll be redirected in about 5 secs. If not, click <a href="profil.php">here</a>.'; 
+           header( "location: profil.php" );
+           //echo 'You\'ll be redirected in about 5 secs. If not, click <a href="profil.php">here</a>.'; 
 		}
 }
 
 ?>
+<html>
+<head>
+	<title>Login | Trashsquare</title>
+</head>
+
 
 <body>
 
