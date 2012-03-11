@@ -22,13 +22,9 @@ if ( isset($_POST['submit']) ) {
 			$expiration = time() + 90 * 24 * 60 * 60;
 
            // Création des cookies
-           setcookie("ID_UTILISATEUR", $row["id"], $expiration, "/");
-           $message = "connecte";
-           // Redirection de l'utilisateur	
-           
-           // http_redirect("www.google.be");
-           header( "location: profil.php" );
-           //echo 'You\'ll be redirected in about 5 secs. If not, click <a href="profil.php">here</a>.'; 
+           //setcookie("ID_UTILISATEUR", $row["id"], $expiration, "/");
+           // Redirection de l'utilisateur	           
+           header( "location: profil.php?id=".$row["id"] ."" );
 		}
 }
 
