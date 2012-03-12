@@ -69,7 +69,7 @@ $score = mysql_fetch_array($score_data);
 	</fieldset>
 	<fieldset>
 		<legend>Votre score!</legend>
-		<p>Vous avez jetté <?php echo $score[1]; ?> déchets</p>
+		<p>Vous avez jetté <?php echo $score[1]; ?> déchets. Vous etes : <?php echo get_the_titre( $score[1] ); ?></p>
 	</fieldset>
 	<input type="submit" id="submit" name="submit" value="Mettre a jour votre profil" />
 </form>
