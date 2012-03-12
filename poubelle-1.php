@@ -50,6 +50,19 @@ if ( isset($_POST['submit']) ) {
 <p><?= $message; ?></p>
 <? } if($masquer_formulaire != true) { ?>
 <form name="p_login" method="post" action="poubelle-1.php">
+	<select>
+		<?php 
+			$sqlPoubelle = "SELECT * FROM poubelle";
+			$resultsPoubelle = mysql_query($sqlPoubelle, $connection);
+			$nombrePoubelle = mysql_num_rows($resultsPoubelle);
+
+			for ($count = 1; $count <= $nombrePoubelle; $count++) {
+				while ( $nomPoubelle = mysql_fetch_array($resultsPoubelle) ) {
+					echo '<option value="'. $nomPoubelle['nom'] . '">' . $nomPoubelle['nom'] . '</option>';
+				}
+			}
+		?>
+	</select>
 	<input type="text" value="" name="login" id="login" />
 	<input type="submit" id="submit" name="submit" />
 </form>
