@@ -16,6 +16,8 @@ if ( isset($_POST['submit']) ) {
 	} else {
 		// controler si login existe
 		$login = $_POST['login'];
+		
+
 		$result = mysql_query("
 			SELECT * 
 			FROM user 
@@ -27,16 +29,18 @@ if ( isset($_POST['submit']) ) {
 		else {
 			$row = mysql_fetch_array($result);
 			$user_id = $row['id'];
-			$result = mysql_query("
-              INSERT INTO checkin(
-                   user_id,
+			$poubelle_id = $_POST['poubelle'];
+			$query = "INSERT INTO 
+				checkin(
+                   	user_id,
                    poubelle_id
               )
               VALUES(
                    $user_id,
-                   1 
+                   $poubelle_id
               )
-         	");
+         	";
+         	mysql_query($query);
          	$message .= "Action bien enregistr&eacute;e";
 		}	
 	}
@@ -50,7 +54,7 @@ if ( isset($_POST['submit']) ) {
 <p><?= $message; ?></p>
 <? } if($masquer_formulaire != true) { ?>
 <form name="p_login" method="post" action="poubelle-1.php">
-	<select>
+	<select name ="poubelle">
 		<?php 
 			$sqlPoubelle = "SELECT * FROM poubelle";
 			$resultsPoubelle = mysql_query($sqlPoubelle, $connection);
@@ -58,7 +62,7 @@ if ( isset($_POST['submit']) ) {
 
 			for ($count = 1; $count <= $nombrePoubelle; $count++) {
 				while ( $nomPoubelle = mysql_fetch_array($resultsPoubelle) ) {
-					echo '<option value="'. $nomPoubelle['nom'] . '">' . $nomPoubelle['nom'] . '</option>';
+					echo '<option value="'. $nomPoubelle['id'] . '">' . $nomPoubelle['nom'] . '</option>';
 				}
 			}
 		?>
