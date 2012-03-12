@@ -1,34 +1,37 @@
 <?php 
 include_once('includes/db_connect.php');
-if ( isset($_POST['submit']) ) {
+if(isset($_COOKIE["user_id"])) {
+	header( "location: profil.php" );
+} else {
+	if ( isset($_POST['submit']) ) {
 
-	if ( !isset($_POST['login']) || !isset($_POST['mdp']) ) {
-		$message = "Veillez entrez un login / mot de passe.";
-	} else {
-
-		$login = $_POST["login"];
-		$mdp = $_POST["mdp"];
-
-
-		$result = mysql_query("
-            SELECT *
-            FROM user
-            WHERE login = " . $login . "&& password = " . $mdp);
-		}
-		if(!$result) {
-			$message = "Votre login ou mot de passe est incorrect.";
+		if ( !isset($_POST['login']) || !isset($_POST['mdp']) ) {
+			$message = "Veillez entrez un login / mot de passe.";
 		} else {
-			$row = mysql_fetch_array($result);
-			$expiration = time() + 90 * 24 * 60 * 60;
 
-           // Création des cookies
-           setcookie("user_id", $row["id"], $expiration, "/");
+			$login = $_POST["login"];
+			$mdp = $_POST["mdp"];
 
-           // Redirection de l'utilisateur	           
-           header( "location: profil.php" );
-		}
+
+			$result = mysql_query("
+	            SELECT *
+	            FROM user
+	            WHERE login = " . $login . "&& password = " . $mdp);
+			}
+			if(!$result) {
+				$message = "Votre login ou mot de passe est incorrect.";
+			} else {
+				$row = mysql_fetch_array($result);
+				$expiration = time() + 90 * 24 * 60 * 60;
+
+	           // Création des cookies
+	           setcookie("user_id", $row["id"], $expiration, "/");
+
+	           // Redirection de l'utilisateur	           
+	           header( "location: profil.php" );
+			}
+	}
 }
-
 ?>
 <html>
 <head>

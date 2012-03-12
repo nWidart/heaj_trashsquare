@@ -1,7 +1,11 @@
 <?php 
-	include_once('includes/db_connect.php');
-	include_once('includes/functions.php');
+include_once('includes/db_connect.php');
+include_once('includes/functions.php');
 
+if(!isset($_COOKIE["user_id"]))
+{
+     header( "location: login.php" );
+} else {
 	if ( isset($_POST['submit']) ) {
 		$stripdonnees = strip($_POST['nom'],$_POST['prenom']);
 
@@ -15,20 +19,31 @@
 		 }
 		 else {
 		 	$sql = "UPDATE user
-		 			SET nom = '" . $stripdonnees['nom'] . "',
-		 			prenom = '" . $stripdonnees['prenom'] . "'
+		 			SET `nom` = '" . $stripdonnees['nom'] . "',
+		 			`prenom` = '" . $stripdonnees['prenom'] . "'
 		 			WHERE id=" . $_COOKIE["user_id"];
-		 	echo $sql;		
-		 	//mysql_query($sql) or die (mysql_error());
+		 	
+		 	mysql_query($sql) or die (mysql_error());
+		 	$message = '<span class="succes">Profil mit a jour!</span>';
 		 }
 	}
+}
+$reponse = mysql_query("SELECT * FROM user WHERE id =". $_COOKIE["user_id"] );
+$donnees = mysql_fetch_array($reponse);
 
-	$reponse = mysql_query("SELECT * FROM user WHERE id =". $_COOKIE["user_id"] );
-	$donnees = mysql_fetch_array($reponse);
+$sql_score = "SELECT user_id,COUNT(*) ";
+$sql_score .= "FROM checkin ";
+$sql_score .= "WHERE user_id=" . $_COOKIE["user_id"];
+//$sql_score .= "WHERE user_id=13";
+$score_data = mysql_query($sql_score, $connection);
+$score = mysql_fetch_array($score_data);
+
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Profil | Trashsquare</title>
+	<meta charset="UTF-8">
 </head>
 
 <body>
@@ -50,7 +65,11 @@
 		<label for="login">Login:</label>
 		<input disabled type="text" name="login" value="<?php echo $donnees['login']; ?>" alt="login" title="login"/>
 		<label for="mdp">Mot de passe:</label>
-		<input disabled type="text" name="mdp" value="<?php echo $donnees['password']; ?>" alt="mdp" title="mdp"/>
+		<input disabled type="text" name="mdp" value="<?php echo $donnees['password']; ?>" alt="mot de passe" title="mdp"/>
+	</fieldset>
+	<fieldset>
+		<legend>Votre score!</legend>
+		<p>Vous avez jetté <?php echo $score[1]; ?> déchets</p>
 	</fieldset>
 	<input type="submit" id="submit" name="submit" value="Mettre a jour votre profil" />
 </form>

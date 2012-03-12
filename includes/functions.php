@@ -10,3 +10,17 @@ function strip($nom,$prenom) {
 
 	return $stripdonnees;
 }
+
+function get_the_titre($score) {
+	switch ($score) {
+		case '1':
+			$grade = "grade";
+			break;
+		
+		default:
+			$grade = "gradeParDefaut";
+			break;
+	}
+
+	return $grade;
+}
