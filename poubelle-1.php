@@ -67,7 +67,7 @@ if ( isset($_POST['submit']) ) {
 			}
 		?>
 	</select>
-	<input type="text" value="" name="login" id="login" />
+	<input type="text" value="" placeholder="Entrer votre login" name="login" id="login" />
 	<input type="submit" id="submit" name="submit" />
 </form>
 <? } ?>
