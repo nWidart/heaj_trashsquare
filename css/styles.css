@@ -33,7 +33,7 @@ a:hover {
 .header h1 {
 	text-indent:-99999px;
 	background: url('../images/trashsquare.png') no-repeat;
-	width: 185px;height: 45px;
+	width: 187px;height: 45px;
 	display: block;
 }
 .main-navigation {
@@ -169,6 +169,10 @@ p.classe {
 	text-indent: -9999px;
 	background:url('../images/illu_trash.png');
 	width: 70px;height:101px;
+}
+/* progress bar steps */
+.ui-progress {
+
 }
 
 /* ============================= */
