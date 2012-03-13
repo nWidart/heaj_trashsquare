@@ -79,17 +79,16 @@ li.map:before {
 .profile_link {
 	color: #fff;
 	margin-top: 18px;
-	display: block;
-	width: 48px;
-	/*float: right;*/
+	float: right;
 }
 .profile_link:after {
 	content: '';
-	background: url('../images/arrow_down.png') no-repeat;
+	background: url('../images/arrow_down.png') 0px 5px no-repeat;
 	width: 17px;
 	height: 13px;
-	
+	display: block;
 	float: right;
+
 }
 
 /* ============================= */
