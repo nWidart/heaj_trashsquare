@@ -49,22 +49,47 @@ a:hover {
 	display: block;
 	float: left;
 }
-.main-navigation a:before {
+.main-navigation > ul > li:before {
 	content: '';
 	float: left;
 	display: block;
 	padding-left: 7px;
 }
-.classement:before {
+li.classement:before {
 	background: url('../images/icn_stat_white.png') no-repeat;
 	width: 34px;
 	height: 26px;
 }
-.profil:before {
+li.profil:before {
 	background: url('../images/icn_profil_white.png') no-repeat;
 	width: 30px;
 	height: 33px;
 	
+}
+li.code:before {
+	background: url('../images/icn_code_white.png') no-repeat;
+	width: 22px;
+	height: 30px;
+}
+li.map:before {
+	background: url('../images/icn_pin_white.png') no-repeat;
+	width: 15px;
+	height: 35px;
+}
+.profile_link {
+	color: #fff;
+	margin-top: 18px;
+	display: block;
+	width: 48px;
+	/*float: right;*/
+}
+.profile_link:after {
+	content: '';
+	background: url('../images/arrow_down.png') no-repeat;
+	width: 17px;
+	height: 13px;
+	
+	float: right;
 }
 
 /* ============================= */
