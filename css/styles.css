@@ -30,19 +30,29 @@ a:hover {
 	-moz-box-shadow: 0 1px 0 #fff, inset 0 -1px 2px rgba(0,0,0,.2);
 	box-shadow: 0 1px 0 #fff, inset 0 -1px 2px rgba(0,0,0,.2);
 }
-.header h1 {
+
+.header h1 a {
 	text-indent:-99999px;
 	background: url('../images/trashsquare.png') no-repeat;
 	width: 187px;height: 45px;
 	display: block;
 }
+
+.header h1 a:hover{
+	border: none;
+}
+
 .main-navigation {
 	margin-top: 7px;
 }
 .main-navigation > ul > li {
 	float: left;
-	margin: 0px 25px;
+	margin-right: 80px;
 	line-height:26px;
+}
+
+.main-navigation > ul > li:last-child{
+	margin-right: 0;
 }
 .main-navigation > ul > li > a {
 	color: #fff;
@@ -77,25 +87,30 @@ li.map:before {
 	width: 15px;
 	height: 35px;
 }
-.profile_link {
-	color: #fff;
-	margin-top: 18px;
-	float: right;
-}
-.profile_link:after {
-	content: '';
-	background: url('../images/arrow_down.png') 0px 5px no-repeat;
-	width: 17px;
-	height: 13px;
-	display: block;
-	float: right;
 
+ul.connexion{
+	margin-top: 19px;
 }
+
+ul.connexion li{
+	float: left;
+	margin-left: 20px;
+	color: #497d89;
+}
+
+ul.connexion li a{
+	color: #FFF;
+}
+
+ul.connexion li a:hover{
+	border-bottom: 1px dotted #FFF;
+}
+
 /* ------------------------------------------------------------------------------------------------------------------------
  * Contenu
  */
 .contenu {
-	margin-top: 20px;
+	margin-top: 60px;
 }
 h1 {
 	font-size: 23px;
@@ -107,11 +122,14 @@ h2 {
 	font-size: 23px;
 	color: #59848e;
 	font-weight: bold;
-	margin: 20px 0 10px 0;
+	margin: 20px 0 30px 0;
+	margin-top: 40px;
 }
 h3 {
 	font-size: 18px;
 	color: #59848e;	
+	margin: 0 0 30px 0;
+	margin-top: 40px;
 }
 p.classe {
 	font-size: 16px;
@@ -168,11 +186,164 @@ p.classe {
 	float: left;
 	text-indent: -9999px;
 	background:url('../images/illu_trash.png');
-	width: 70px;height:101px;
+	width: 70px;
+	height:101px;
 }
 /* progress bar steps */
 .ui-progress {
 
+}
+
+.scores{
+	background: #FFF;
+	border: 1px solid #30474c;
+	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	
+	margin-top: 40px;
+}
+
+.scores table th, .scores table td{
+	text-align: center;
+	/* border: 1px solid red; */
+}
+
+.scores table td{
+	color: #59848e;
+	font-weight: bold;
+	position: relative;
+	padding: 20px;
+}
+
+.scores table td:last-child{
+	text-align: left;
+}
+
+.scores table td img{
+	position: absolute;
+	right: 15px;
+}
+
+.scores table tr th img{
+	margin: 20px 40px 20px 35px;
+}
+
+.scores a{
+	display: block;
+	margin-left: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: #59848e;
+	font-weight: bold;
+	font-size: 11px;
+	width: 145px;
+}
+
+.scores a:hover{
+	border-bottom: 1px dotted #59848e;
+}
+
+.grade{
+	height: 105px;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.grade img{
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+}
+
+.grade.first img{
+	bottom: 0;
+}
+
+.grade p{
+	position: absolute;
+	bottom: 15px;
+	margin-top: -52px;
+	right: 0;
+	width: 145px;
+	color: #585858;
+	font-size: 12px;
+}
+
+.grade span{
+	display: block;
+	line-height: 3em;
+	color: #59848e;
+	font-weight: bold;
+}
+
+form{
+	position: absolute;
+	width: 1000px;
+	height: 200px;
+	padding: 10px 0;
+	border: 1px solid #30474c;
+	background: #FFF;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -500px;
+	text-align: center;
+	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+form label{
+	display: block;
+	font-size: 20px;
+	color: #59848e;
+	margin-top: 60px;
+	margin-bottom: 20px;
+}
+
+form input[type=text]{
+	border: 1px solid #30474c;
+	width: 190px;
+	height: 30px;
+	
+	font-size: 18px;
+	color: #585858;
+	
+	-webkit-box-shadow: 0 0 3px #30474c;
+	-moz-box-shadow: 0 0 3px #30474c;
+	box-shadow: 0 0 3px #30474c;
+	margin-bottom: 20px;
+	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+form input[type=submit]{
+	background: #7ab0bc;
+	width: 190px;
+	height: 30px;
+	border: none;
+	font-size: 18px;
+	color: #fff;
+	cursor: pointer;
+	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+form input[type=submit]:hover{
+	background: #689ea9;
 }
 
 /* ============================= */
