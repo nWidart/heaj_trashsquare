@@ -73,6 +73,7 @@ $score = mysql_fetch_array($score_data);
 	</fieldset>
 	<input type="submit" id="submit" name="submit" value="Mettre a jour votre profil" />
 </form>
+<a href="deconection.php">Déconection</a>
 <?php } ?>
 </body>
 </html>

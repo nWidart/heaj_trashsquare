@@ -22,7 +22,7 @@ if(isset($_COOKIE["user_id"])) {
 				$message = "Votre login ou mot de passe est incorrect.";
 			} else {
 				$row = mysql_fetch_array($result);
-				$expiration = time() + 90 * 24 * 60 * 60;
+				$expiration = time() + 3600;
 
 	           // Création des cookies
 	           setcookie("user_id", $row["id"], $expiration, "/");
