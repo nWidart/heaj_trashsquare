@@ -43,7 +43,7 @@ if(isset($_COOKIE["user_id"])) {
 
 <? if(isset($message)) { ?>
 <p><?= $message; ?></p>
-<? } if($masquer_formulaire != true) { ?>
+<? } ?>
 <form name="s_login" method="post" action="login.php">
 	<label>login</label>
 	<input type="text" value="" placeholder="Entrer votre login" name="login" id="login" />
@@ -51,7 +51,6 @@ if(isset($_COOKIE["user_id"])) {
 	<input type="password" value="" name="mdp" id="mdp" />
 	<input type="submit" id="submit" name="submit" />
 </form>
-<? } ?>
 
 
 </body>
