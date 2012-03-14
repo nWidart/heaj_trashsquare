@@ -1,8 +1,3 @@
-<html>
-<head>
-	<title>Poubelle 1 | Trashsquare</title>
-</head>
-
 <?php
 include_once('includes/db_connect.php');
 // Formulaire visible par défaut
@@ -47,6 +42,11 @@ if ( isset($_POST['submit']) ) {
 }
 
 ?>
+
+<html>
+<head>
+	<title>Poubelle 1 | Trashsquare</title>
+</head>
 
 <body>
 
