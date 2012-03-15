@@ -1,4 +1,5 @@
 <?php include_once('includes/db_connect.php'); ?>
+<?php include_once('includes/functions.php'); ?>
 <?php $page_title = "Trashsquare | Rank"; ?>
 <?php include('includes/header.php'); ?>
 
@@ -6,9 +7,9 @@
 	<div class="row">
 		<div class="threecol">
 			<img src="images/avatar.png" alt="avatar">
-			<h2 class="nom">Simon Vreux</h2>
+			<h2 class="nom"><?php echo $userPrenom . " " . $userNom; ?></h2>
 			<p class="classe">2TiD1</p>
-			<p class="level">Initié</p>
+			<p class="level"><?php echo get_the_titre( $score[1] ); ?></p>
 			<ul class="profile_menu">
 				<li class="param"><a href="param.php">Paramètres</a></li>
 				<li class="checkin"><a href="poubelle-1.php">Check-in</a></li>
