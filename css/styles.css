@@ -183,7 +183,7 @@ form input[type=submit]{
 	font-size: 18px;
 	color: #fff;
 	cursor: pointer;
-	
+	margin-right: 20px;
 	
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -240,6 +240,7 @@ form input[type=submit]:hover{
 	padding: 8px 5px;
 	margin-bottom: 10px;
 	position: relative;
+	border:none;
 }
 
 .profile_menu li.param:after {
@@ -400,15 +401,17 @@ form input[type=submit]:hover{
 }
 
 .param{
-	background: #FFF;
 	border: 1px solid #30474c;
-	
+	background: #FFF;	
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 	
 	margin-top: 40px;
 	padding: 20px;
+}
+.profile_menu .param {
+
 }
 
 .param form fieldset{

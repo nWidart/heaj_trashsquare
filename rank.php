@@ -5,16 +5,7 @@
 
 <div class="container contenu">
 	<div class="row">
-		<div class="threecol">
-			<img src="images/avatar.png" alt="avatar">
-			<h2 class="nom"><?php echo $userPrenom . " " . $userNom; ?></h2>
-			<p class="classe">2TiD1</p>
-			<p class="level"><?php echo get_the_titre( $score[1] ); ?></p>
-			<ul class="profile_menu">
-				<li class="param"><a href="param.php">Paramètres</a></li>
-				<li class="checkin"><a href="poubelle-1.php">Check-in</a></li>
-			</ul>
-		</div>
+          <?php include('includes/sidebar-userInfo.php'); ?>
 		<div class="sixcol">
 			<h2>Classement</h2>
           	<div class="scores rank">

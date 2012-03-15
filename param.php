@@ -6,6 +6,7 @@ include_once('includes/functions.php');
 if(!isset($_COOKIE["user_id"]))
 {
      header( "location: login.php" );
+     
 } else {
 	if ( isset($_POST['submit']) ) {
 		$stripdonnees = strip($_POST['nom'],$_POST['prenom']);
@@ -27,7 +28,9 @@ if(!isset($_COOKIE["user_id"]))
 		 	mysql_query($sql) or die (mysql_error());
 		 	$message = '<span class="succes">Profil mit a jour!</span>';
 		 }
-	}
+	} 
+
+
 }
 $reponse = mysql_query("SELECT * FROM user WHERE id =". $_COOKIE["user_id"] );
 $donnees = mysql_fetch_array($reponse);
@@ -41,16 +44,7 @@ $donnees = mysql_fetch_array($reponse);
 
 <div class="container contenu">
 	<div class="row">
-		<div class="threecol">
-			<img src="images/avatar.png" alt="avatar">
-			<h2><?php echo $userPrenom . " " . $userNom; ?></h2>
-			<p class="classe">2TiD1</p>
-			<p class="level"><?php echo get_the_titre( $score[1] ); ?></p>
-			<ul class="profile_menu">
-				<li class="param"><a href="param.php">Paramètres</a></li>
-				<li class="checkin"><a href="check.php">Check-in</a></li>
-			</ul>
-		</div>
+		<?php include('includes/sidebar-userInfo.php'); ?>
 		<div class="sixcol">
 			<h2>Profil</h2>
 			<span class="poubelle">Votre Score</span>
