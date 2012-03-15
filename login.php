@@ -89,7 +89,7 @@ if(isset($_COOKIE["user_id"])) {
 	<div class="row">
 		<? if(isset($message)) { ?>
 		<p class="error"><?= $message; ?></p>
-		<? } if($masquer_formulaire != true) { ?>
+		<? } ?>
 		<form name="s_login" method="post" action="login.php" class="login">
 			<label>Login:</label>
 			<input type="text" value="" placeholder="Entrer votre login" name="login" id="login" /><br />
