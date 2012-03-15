@@ -42,7 +42,7 @@ $donnees = mysql_fetch_array($reponse);
 	<div class="row">
 		<div class="threecol">
 			<img src="images/avatar.png" alt="avatar">
-			<h2>Simon Vreux</h2>
+			<h2><?php echo $userPrenom . " " . $userNom; ?></h2>
 			<p class="classe">2TiD1</p>
 			<ul class="profile_menu">
 				<li class="param"><a href="param.php">Paramètres</a></li>
