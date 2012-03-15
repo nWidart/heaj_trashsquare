@@ -1,5 +1,6 @@
 <?php 
 include_once('includes/db_connect.php');
+include('includes/functions.php');
 if ( isset($_COOKIE["user_id"]) ) {
 
 	$sql = "SELECT * FROM user WHERE id =" . $_COOKIE['user_id'];

@@ -7,6 +7,7 @@
 
 ?>
 <?php $page_title = "Trashsquare | Profil"; ?>
+
 <?php include('includes/header.php'); ?>
 
 <div class="container contenu">
