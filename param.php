@@ -10,11 +10,11 @@ if(!isset($_COOKIE["user_id"]))
 	if ( isset($_POST['submit']) ) {
 		$stripdonnees = strip($_POST['nom'],$_POST['prenom']);
 
-		if ( empty($stripdonnees['nom']) || preg_match("^[A-Za-z0-9_\ ]{4,20}$",$stripdonnees['nom']) )
+		if ( empty($stripdonnees['nom']) )
 		 {
 			 $message .= "Votre nom doit comporter entre 4 et 20 caractères<br />" ; 
 		 } 
-		 if ( empty($stripdonnees['prenom']) || preg_match("^[A-Za-z0-9_\ ]{4,20}$",$stripdonnees['prenom']) ) 
+		 if ( empty($stripdonnees['prenom']) ) 
 		 {
 			 $message .= "Votre prenom doit comporter entre 4 et 20 caractères<br />" ; 
 		 }
