@@ -1,5 +1,7 @@
 <?php 
 include_once('includes/db_connect.php');
+include('includes/functions.php');
+
 if(isset($_COOKIE["user_id"])) {
 	header( "location: profil.php" );
 } else {

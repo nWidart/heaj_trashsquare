@@ -8,7 +8,8 @@
 ?>
 <?php $page_title = "Trashsquare | Profil"; ?>
 
-<?php include('includes/header.php'); ?>
+<?php include('includes/header.php'); 
+include('includes/functions.php'); ?>
 
 <div class="container contenu">
 	<div class="row">

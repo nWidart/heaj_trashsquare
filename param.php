@@ -1,3 +1,4 @@
+
 <?php 
 include_once('includes/db_connect.php');
 include_once('includes/functions.php');
@@ -35,7 +36,7 @@ $donnees = mysql_fetch_array($reponse);
 
 ?>
 
-<?php $page_title = "Trashsquare | Param"; ?>
+
 <?php include('includes/header.php'); ?>
 
 <div class="container contenu">
