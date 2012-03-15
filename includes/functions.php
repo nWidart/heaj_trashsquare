@@ -52,18 +52,7 @@ function get_the_titre($score) {
 		case 13:
 			$grade = "Roi";
 			break;
-		case 14:
-			$grade = "Initié14";
-			break;
-		case 15:
-			$grade = "Initié15";
-			break;
-		case 16:
-			$grade = "Initié16";
-			break;
-		case 17:
-			$grade = "Initié17";
-			break;
+
 		
 		default:
 			$grade = "gradeParDefaut :(";
@@ -71,4 +60,18 @@ function get_the_titre($score) {
 	}
 
 	return $grade;
+}
+
+function get_the_equivalent_bar_width($score) {
+	switch ($score) {
+		case 12:
+			$bw = "50";
+			break;
+
+		default:
+			$bw = 0;
+			break;
+	}
+
+	return $bw;
 }

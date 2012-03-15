@@ -1,58 +1,19 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-	<meta charset="utf-8" />
-	<title>Trashsquare | Profil</title>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	
-	<!-- 1140px Grid styles for IE -->
-	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
-
-	<!-- The 1140px Grid - http://cssgrid.net/ -->
-	<link rel="stylesheet" href="css/1140.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/progressbar.css" type="text/css" media="screen" />
-
-	
-	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
-	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
-	
+<?php 
+	if(!isset($_COOKIE["user_id"])) {
+		header( "location: login.php" );
+		exit();
+	}
 
 
-</head>
-<body>
-<div class="container header">
-	<div class="row">
-		<div class="threecol">
-			<h1><a href="index.php" title="Index">Trashsquare</a></h1>
-		</div>
-		<div class="sixcol">
-			<nav class="main-navigation">
-				<ul>
-					<li class="classement"><a href="rank.php">Classement</a></li>
-					<li class="profil"><a href="profil.php">Profil</a></li>
-					<li class="code"><a href="check.php">Code</a></li>
-					<li class="map"><a href="map.php">Map</a></li>
-				</ul>
-			</nav>
-		</div>
-		<div class="threecol last">
-			<ul class="connexion">
-				<li>Bienvenue <a href="profil.php" class="profile_link">Simon</a></li>
-				<li><a href="login.php">Déconnexion</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
+?>
+<?php $page_title = "Trashsquare | Profil"; ?>
+<?php include('includes/header.php'); ?>
 
 <div class="container contenu">
 	<div class="row">
 		<div class="threecol">
 			<img src="images/avatar.png" alt="avatar">
-			<h2 class="nom">Simon Vreux</h2>
+			<h2 class="nom"><?php echo $userPrenom . " " . $userNom; ?></h2>
 			<p class="classe">2TiD1</p>
 			<p class="level">Initié</p>
 			<ul class="profile_menu">
@@ -64,9 +25,16 @@
 			<h2>Profil</h2>
 			<span class="poubelle">Votre Score</span>
 			<div class="ui-progress-bar ui-container" id="progress_bar">
-            	<div class="ui-progress" style="width: 15%;">
+				<?php 
+					if ( $score[1] <= 10 ) {
+						$bar_width = $score[1] . "0";
+					} else {
+						$bar_width = "100";
+					}
+				?>
+            	<div class="ui-progress" style="width: <?php echo $bar_width; ?>%;">
               		<span class="ui-label">
-                		<b class="value">7</b>
+                		<b class="value"><?php echo $score[1]; ?></b>
              	 	</span>
             	</div>
           	</div><!-- end progress bar -->
