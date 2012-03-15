@@ -5,7 +5,7 @@ $masquer_formulaire = false;
 
 
 if ( isset($_POST['submit']) ) {
-     
+    $message = "";
 	if ( !isset($_POST['login'] )) {
 	    $message .= '<p class="error_msg">Merci d\'entrer un login</p>';
 	} else {

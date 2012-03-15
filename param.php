@@ -46,7 +46,7 @@ $donnees = mysql_fetch_array($reponse);
 			<p class="classe">2TiD1</p>
 			<ul class="profile_menu">
 				<li class="param"><a href="param.php">Paramètres</a></li>
-				<li class="checkin"><a href="poubelle-1.php">Check-in</a></li>
+				<li class="checkin"><a href="check.php">Check-in</a></li>
 			</ul>
 		</div>
 		<div class="sixcol">
@@ -72,7 +72,7 @@ $donnees = mysql_fetch_array($reponse);
 				<p>
 				<?= $message; ?>
 				</p>
-				<? } if($masquer_formulaire != true) { ?>
+				<? } ?>
 				
 				<form name="s_profil" method="post" action="profil.php">
 				<fieldset>
@@ -95,7 +95,7 @@ $donnees = mysql_fetch_array($reponse);
 				</fieldset>
 				<input type="submit" id="submit" name="submit" value="Mettre à jour" />
 				</form>
-				<?php } ?>
+
 			</div>
 			
 		</div>

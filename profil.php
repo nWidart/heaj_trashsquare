@@ -18,7 +18,7 @@
 			<p class="level">Initié</p>
 			<ul class="profile_menu">
 				<li class="param"><a href="param.php">Paramètres</a></li>
-				<li class="checkin"><a href="poubelle-1.php">Check-in</a></li>
+				<li class="checkin"><a href="check.php">Check-in</a></li>
 			</ul>
 		</div>
 		<div class="sixcol">
