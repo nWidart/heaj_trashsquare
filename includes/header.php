@@ -73,7 +73,7 @@ if ( isset($_COOKIE["user_id"]) ) {
 				<?php 
 				if ( isset($_COOKIE['user_id']) ) {
 				?>	
-					<li>Bienvenue <a href="profil.php" class="profile_link"><?= $userNom; ?></a></li>
+					<li>Bienvenue <a href="profil.php" class="profile_link"><?= $userPrenom; ?></a></li>
 					<li><a href="deconection.php">Déconnexion</a></li>
 				<?php } else { ?>
 					<li><a href="login.php">Login</a></li>
