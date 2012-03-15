@@ -74,7 +74,7 @@ $donnees = mysql_fetch_array($reponse);
 				</p>
 				<? } ?>
 				
-				<form name="s_profil" method="post" action="profil.php">
+				<form name="s_profil" method="post" action="param.php">
 				<fieldset>
 					<legend>Profil</legend>
 					<label for="nom">Nom:</label>
