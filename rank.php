@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Trashsquare | Profil</title>
+	<title>Trashsquare | Classement</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
@@ -61,76 +61,99 @@
 			</ul>
 		</div>
 		<div class="sixcol">
-			<h2>Profil</h2>
-			<span class="poubelle">Votre Score</span>
-			<div class="ui-progress-bar ui-container" id="progress_bar">
-            	<div class="ui-progress" style="width: 15%;">
-              		<span class="ui-label">
-                		<b class="value">7</b>
-             	 	</span>
-            	</div>
-          	</div><!-- end progress bar -->
-          	
-          	<div class="scores">
+			<h2>Classement</h2>
+          	<div class="scores rank">
           		<table>
           			<tr>
           				<th><img src="images/icn_trash.png" alt="Trash" /></th>
           				<th><img src="images/icn_stat.png" alt="Stat" /></th>
           				<th><img src="images/icn_code.png" alt="Code" /></th>
-          				<th><img src="images/icn_crown.png" alt="Crown" /></th>
           				<th><img src="images/icn_badge.png" alt="Badge" /></th>
+          				<th><img src="images/icn_crown.png" alt="Crown" /></th>
           			</tr>
           			
           			<tr>
-          				<td>B240</td>
-          				<td>32</td>
-          				<td>5</td>
-          				<td>3</td>
-          				<td>#3 <img src="images/arrow-up.png" alt="Up" /></td>
-          			</tr>
-          			
-          			<tr>
-          				<td>B239</td>
-          				<td>19</td>
-          				<td>6</td>
-          				<td>2</td>
-          				<td>#5 <img src="images/arrow-up.png" alt="Up" /></td>
-          			</tr>
-          			
-          			<tr>
-          				<td>B238</td>
-          				<td>12</td>
-          				<td>3</td>
           				<td>1</td>
-          				<td>#23 <img src="images/arrow-equal.png" alt="Equal" /></td>
+          				<td>Moreno N.</td>
+          				<td>1350pts</td>
+          				<td>53</td>
+          				<td>B240</td>
           			</tr>
           			
           			<tr>
+          				<td>2</td>
+          				<td>Anthony D.</td>
+          				<td>1235pts</td>
+          				<td>45</td>
           				<td>B237</td>
-          				<td>5</td>
-          				<td>2</td>
-          				<td>0</td>
-          				<td>#84 <img src="images/arrow-down2.png" alt="Down" /></td>
           			</tr>
           			
           			<tr>
-          				<td>B236</td>
-          				<td>2</td>
-          				<td>0</td>
-          				<td>0</td>
-          				<td>#98 <img src="images/arrow-down2.png" alt="Down" /></td>
+          				<td>3</td>
+          				<td>Julien D.</td>
+          				<td>1132pts</td>
+          				<td>40</td>
+          				<td>B238</td>
           			</tr>
           			
           			<tr>
-          				<td>B235</td>
-          				<td>0</td>
-          				<td>0</td>
-          				<td>0</td>
+          				<td>4</td>
+          				<td>Anne J.</td>
+          				<td>964pts</td>
+          				<td>32</td>
           				<td>n/a</td>
           			</tr>
+          			
+          			<tr>
+          				<td>5</td>
+          				<td>Gilles S.</td>
+          				<td>850pts</td>
+          				<td>24</td>
+          				<td>n/a</td>
+          			</tr>
+          			
+          			<tr>
+          				<td>6</td>
+          				<td>Gauthier B.</td>
+          				<td>820pts</td>
+          				<td>24</td>
+          				<td>n/a</td>
+          			</tr>
+          			
+          			<tr>
+          				<td>7</td>
+          				<td>Florian B.</td>
+          				<td>796pts</td>
+          				<td>22</td>
+          				<td>n/a</td>
+          			</tr>
+          			
+          			<tr>
+          				<td>8</td>
+          				<td>Célia S.</td>
+          				<td>698pts</td>
+          				<td>19</td>
+          				<td>n/a</td>
+          			</tr>
+          			
+          			<tr>
+          				<td>9</td>
+          				<td>Alexis W.</td>
+          				<td>600pts</td>
+          				<td>17</td>
+          				<td>n/a</td>
+          			</tr>
+          			
+          			<tr>
+          				<td>10</td>
+          				<td>Mathieu L.</td>
+          				<td>550pts</td>
+          				<td>13</td>
+          				<td>n/a</td>
+          			</tr>
+          			
           		</table>
-          		<a href="map.php"><img src="images/blue-arrow.png" alt="Locaux" /> Voir tous les locaux</a>
-          		<a href="rank.php"><img src="images/blue-arrow.png" alt="Locaux" /> Voir le classement</a>
+          		<p>Vous êtes actuellement en <span>98ème</span> position</p>
           	</div>
           
 		</div>

@@ -27,22 +27,22 @@
 <div class="container header">
 	<div class="row">
 		<div class="threecol">
-			<h1><a href="index.html" title="Index">Trashsquare</a></h1>
+			<h1><a href="index.php" title="Index">Trashsquare</a></h1>
 		</div>
 		<div class="sixcol">
 			<nav class="main-navigation">
 				<ul>
-					<li class="classement"><a href="#">classement</a></li>
-					<li class="profil"><a href="index.php">profil</a></li>
-					<li class="code"><a href="code.php">code</a></li>
-					<li class="map"><a href="#">map</a></li>
+					<li class="classement"><a href="rank.php">Classement</a></li>
+					<li class="profil"><a href="profil.php">Profil</a></li>
+					<li class="code"><a href="check.php">Code</a></li>
+					<li class="map"><a href="map.php">Map</a></li>
 				</ul>
 			</nav>
 		</div>
 		<div class="threecol last">
 			<ul class="connexion">
 				<li>Bienvenue <a href="profil.php" class="profile_link">Simon</a></li>
-				<li><a hred="#">Déconnexion</a></li>
+				<li><a href="login.php">Déconnexion</a></li>
 			</ul>
 		</div>
 	</div>
@@ -50,11 +50,16 @@
 
 <div class="container contenu">
 	<div class="row">
-		<div class="threecol">
-			<img src="images/avatar.png" alt="avatar">
-			<h2>Simon Vreux</h2>
-			<p class="classe">2TiD1</p>
-			<ul class="profile_menu">
+		<div class="index">
+			<h2>TU JETTES, TU CHECK ET TU RESPECTES…</h2>
+		</div>
+	</div>
+</div>
+
+
+</body>
+
+</html>s="profile_menu">
 				<li class="param"><a href="profil.php">Paramètres</a></li>
 				<li class="checkin"><a href="poubelle-1.php">Check-in</a></li>
 			</ul>

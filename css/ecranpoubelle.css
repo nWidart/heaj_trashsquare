@@ -1,0 +1,67 @@
+/*CSS Page ecran poubelle  */
+body{	
+		font-family: Geneva, Lucida Sans, Lucida Grande, Lucida Sans Unicode, Verdana, sans-serif;
+				background: #e5be52; /* Old browsers */
+				background: -moz-linear-gradient(top, #e5be52 0%, #ffffff 66%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5be52), color-stop(66%,#ffffff)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, #e5be52 0%,#ffffff 66%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, #e5be52 0%,#ffffff 66%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top, #e5be52 0%,#ffffff 66%); /* IE10+ */
+				background: linear-gradient(top, #e5be52 0%,#ffffff 66%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5be52', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+.header h1{
+	text-indent:-99999px;
+	background: url('../images/trashsquare.png') no-repeat;
+	width: 187px;height: 45px;
+	display: block;
+	margin-bottom: 10%;
+}
+h2{
+	color:#333f70; 
+	font-size: 30px; 
+	text-align: center;
+	text-shadow: 0 0 15px #fff;
+ }
+form{text-align: center;}
+input, input:hover, select{
+		-webkit-box-shadow: 0 0 5px #333f70;
+		-moz-box-shadow: 0 0 5px #333f70;
+		box-shadow: 0 0 5px #333f70;
+}
+input, input:hover input[type=submit], input[type=submit]:hover{
+	-moz-transition: .2s linear;
+	-webkit-transition: .2s linear;
+	transition: .2s linear;
+}
+input, select{
+	border:#333f70 2px solid; 
+	background: #efefef;
+}
+input{
+	margin:0; 
+	padding: 10px; 
+	font-size: 21px; 
+	color: #333f70;
+}
+input:hover{
+	border:#e5be52 2px solid;
+}
+input[type=submit]{
+	background: #333f70; 
+	color:#fff;
+	padding:12px; 
+	font-weight:300; 
+	border:none; 
+	font-size: 21px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius:5px;
+		border-radius:5px;
+}
+input[type=submit]:hover{
+	background: #e5be52;
+	cursor: pointer;
+}
+select{width:80px;}
+

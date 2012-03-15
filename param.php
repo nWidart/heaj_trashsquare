@@ -1,9 +1,50 @@
+<?php 
+include_once('includes/db_connect.php');
+include_once('includes/functions.php');
+
+if(!isset($_COOKIE["user_id"]))
+{
+     header( "location: login.php" );
+} else {
+	if ( isset($_POST['submit']) ) {
+		$stripdonnees = strip($_POST['nom'],$_POST['prenom']);
+
+		if ( empty($stripdonnees['nom']) || preg_match("^[A-Za-z0-9_\ ]{4,20}$",$stripdonnees['nom']) )
+		 {
+			 $message .= "Votre nom doit comporter entre 4 et 20 caractères<br />" ; 
+		 } 
+		 if ( empty($stripdonnees['prenom']) || preg_match("^[A-Za-z0-9_\ ]{4,20}$",$stripdonnees['prenom']) ) 
+		 {
+			 $message .= "Votre prenom doit comporter entre 4 et 20 caractères<br />" ; 
+		 }
+		 else {
+		 	$sql = "UPDATE user
+		 			SET `nom` = '" . $stripdonnees['nom'] . "',
+		 			`prenom` = '" . $stripdonnees['prenom'] . "'
+		 			WHERE id=" . $_COOKIE["user_id"];
+		 	
+		 	mysql_query($sql) or die (mysql_error());
+		 	$message = '<span class="succes">Profil mit a jour!</span>';
+		 }
+	}
+}
+$reponse = mysql_query("SELECT * FROM user WHERE id =". $_COOKIE["user_id"] );
+$donnees = mysql_fetch_array($reponse);
+
+$sql_score = "SELECT user_id,COUNT(*) ";
+$sql_score .= "FROM checkin ";
+$sql_score .= "WHERE user_id=" . $_COOKIE["user_id"];
+//$sql_score .= "WHERE user_id=13";
+$score_data = mysql_query($sql_score, $connection);
+$score = mysql_fetch_array($score_data);
+
+?>
+
 <!doctype html>
 <html lang="en">
-
 <head>
 	<meta charset="utf-8" />
-	<title>Trashsquare | Profil</title>
+	<title>Trashsquare | Paramètres</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
@@ -19,9 +60,6 @@
 	
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
-	
-
-
 </head>
 <body>
 <div class="container header">
@@ -52,9 +90,8 @@
 	<div class="row">
 		<div class="threecol">
 			<img src="images/avatar.png" alt="avatar">
-			<h2 class="nom">Simon Vreux</h2>
+			<h2>Simon Vreux</h2>
 			<p class="classe">2TiD1</p>
-			<p class="level">Initié</p>
 			<ul class="profile_menu">
 				<li class="param"><a href="param.php">Paramètres</a></li>
 				<li class="checkin"><a href="poubelle-1.php">Check-in</a></li>
@@ -70,69 +107,38 @@
              	 	</span>
             	</div>
           	</div><!-- end progress bar -->
-          	
-          	<div class="scores">
-          		<table>
-          			<tr>
-          				<th><img src="images/icn_trash.png" alt="Trash" /></th>
-          				<th><img src="images/icn_stat.png" alt="Stat" /></th>
-          				<th><img src="images/icn_code.png" alt="Code" /></th>
-          				<th><img src="images/icn_crown.png" alt="Crown" /></th>
-          				<th><img src="images/icn_badge.png" alt="Badge" /></th>
-          			</tr>
-          			
-          			<tr>
-          				<td>B240</td>
-          				<td>32</td>
-          				<td>5</td>
-          				<td>3</td>
-          				<td>#3 <img src="images/arrow-up.png" alt="Up" /></td>
-          			</tr>
-          			
-          			<tr>
-          				<td>B239</td>
-          				<td>19</td>
-          				<td>6</td>
-          				<td>2</td>
-          				<td>#5 <img src="images/arrow-up.png" alt="Up" /></td>
-          			</tr>
-          			
-          			<tr>
-          				<td>B238</td>
-          				<td>12</td>
-          				<td>3</td>
-          				<td>1</td>
-          				<td>#23 <img src="images/arrow-equal.png" alt="Equal" /></td>
-          			</tr>
-          			
-          			<tr>
-          				<td>B237</td>
-          				<td>5</td>
-          				<td>2</td>
-          				<td>0</td>
-          				<td>#84 <img src="images/arrow-down2.png" alt="Down" /></td>
-          			</tr>
-          			
-          			<tr>
-          				<td>B236</td>
-          				<td>2</td>
-          				<td>0</td>
-          				<td>0</td>
-          				<td>#98 <img src="images/arrow-down2.png" alt="Down" /></td>
-          			</tr>
-          			
-          			<tr>
-          				<td>B235</td>
-          				<td>0</td>
-          				<td>0</td>
-          				<td>0</td>
-          				<td>n/a</td>
-          			</tr>
-          		</table>
-          		<a href="map.php"><img src="images/blue-arrow.png" alt="Locaux" /> Voir tous les locaux</a>
-          		<a href="rank.php"><img src="images/blue-arrow.png" alt="Locaux" /> Voir le classement</a>
-          	</div>
-          
+			
+			<div class="param">
+				<? if(isset($message)) { ?>
+				<p>
+				<?= $message; ?>
+				</p>
+				<? } if($masquer_formulaire != true) { ?>
+				
+				<form name="s_profil" method="post" action="profil.php">
+				<fieldset>
+					<legend>Profil</legend>
+					<label for="nom">Nom:</label>
+					<input type="text" name="nom" id="nom" value="<?php echo $donnees['nom']; ?>" alt="Nom" title="Entrez votre nom de famille"/><br />
+					<label for="prenom">Pr&eacute;nom:</label>
+					<input type="text" name="prenom" id="prenom" value="<?php echo $donnees['prenom']; ?>" alt="Prenom" title="Entrez votre prénom"/>
+				</fieldset>
+				<fieldset>
+					<legend>Champs fixes</legend>
+					<label for="login">Login:</label>
+					<input disabled type="text" name="login" value="<?php echo $donnees['login']; ?>" alt="login" title="login"/><br />
+					<label for="mdp">Mot de passe:</label>
+					<input disabled type="text" name="mdp" value="<?php echo $donnees['password']; ?>" alt="mot de passe" title="mdp"/>
+				</fieldset>
+				<fieldset>
+					<legend>Votre score!</legend>
+					<p>Vous avez jetté <?php echo $score[1]; ?> déchets. Vous etes : <?php echo get_the_titre( $score[1] ); ?></p>
+				</fieldset>
+				<input type="submit" id="submit" name="submit" value="Mettre à jour" />
+				</form>
+				<?php } ?>
+			</div>
+			
 		</div>
 		<div class="threecol last">
 			<h2>Badges reçus</h2>
@@ -165,7 +171,5 @@
 	</div>
 </div>
 
-
 </body>
-
 </html>

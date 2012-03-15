@@ -1,46 +1,9 @@
-
-<?php 
-include_once('includes/db_connect.php');
-if(isset($_COOKIE["user_id"])) {
-	header( "location: profil.php" );
-} else {
-	if ( isset($_POST['submit']) ) {
-
-		if ( !isset($_POST['login']) || !isset($_POST['mdp']) ) {
-			$message = "Veillez entrez un login / mot de passe.";
-		} else {
-
-			$login = $_POST["login"];
-			$mdp = $_POST["mdp"];
-
-
-			$result = mysql_query("
-	            SELECT *
-	            FROM user
-	            WHERE login = " . $login . "&& password = " . $mdp);
-			}
-			if(!$result) {
-				$message = "Votre login ou mot de passe est incorrect.";
-			} else {
-				$row = mysql_fetch_array($result);
-				$expiration = time() + 90 * 24 * 60 * 60;
-
-	           // Création des cookies
-	           setcookie("user_id", $row["id"], $expiration, "/");
-
-	           // Redirection de l'utilisateur	           
-	           header( "location: profil.php" );
-			}
-	}
-}
-?>
-
 <!doctype html>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8" />
-	<title>Trashsquare | Login</title>
+	<title>Trashsquare | Check-in</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
@@ -79,7 +42,7 @@ if(isset($_COOKIE["user_id"])) {
 		<div class="threecol last">
 			<ul class="connexion">
 				<li>Bienvenue <a href="profil.php" class="profile_link">Simon</a></li>
-				<li><a href="login.php">Connexion</a></li>
+				<li><a href="login.php">Déconnexion</a></li>
 			</ul>
 		</div>
 	</div>
@@ -87,19 +50,15 @@ if(isset($_COOKIE["user_id"])) {
 
 <div class="container contenu">
 	<div class="row">
-		<? if(isset($message)) { ?>
-		<p class="error"><?= $message; ?></p>
-		<? } if($masquer_formulaire != true) { ?>
-		<form name="s_login" method="post" action="login.php" class="login">
-			<label>Login:</label>
-			<input type="text" value="" placeholder="Entrer votre login" name="login" id="login" /><br />
-			<label>Password:</label>
-			<input type="password" value="" name="mdp" id="mdp" /><br />
-			<input type="submit" id="submit" name="submit" value="Se connecter" />
+		<form class="check" action="" method="post">
+			<label for="code">Entrez le code affiché sur la poubelle pour valider votre check-in</label>
+			<input type="text" id="code" name="code" /><br />
+			<input type="submit" value="Confirmer" />
 		</form>
-		<? } ?>
 	</div>
 </div>
 
+
 </body>
+
 </html>
