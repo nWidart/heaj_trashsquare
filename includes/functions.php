@@ -55,7 +55,7 @@ function get_the_titre($score) {
 
 		
 		default:
-			$grade = "gradeParDefaut :(";
+			$grade = "Débutant";
 			break;
 	}
 
