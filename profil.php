@@ -17,6 +17,7 @@ include('includes/functions.php'); ?>
 		<div class="sixcol">
 			<h2>Profil</h2>
 			<span class="poubelle">Votre Score</span>
+			<p class="level"><?php echo get_the_titre( $score[1] ); ?></p>
 			<div class="ui-progress-bar ui-container" id="progress_bar">
 				<?php 
 					if ( $score[1] <= 10 ) {
@@ -99,27 +100,27 @@ include('includes/functions.php'); ?>
 			<h2>Badges reçus</h2>
 			<div class="grade first">
 				<img src="images/lvl5.png" alt="lvl5" />
-				<p><span>Poubelle collante</span>
+				<p><span>Mr. Propre</span>
 				Tu as jeté plus de 75 déchets au total.</p>
 			</div>
 			<div class="grade">
 				<img src="images/lvl4.png" alt="lvl4" />
-				<p><span>A ras bord</span>
+				<p><span>Aventurier</span>
 				Tu as jeté plus de 50 déchets au total.</p>
 			</div>
 			<div class="grade">
 				<img src="images/lvl3.png" alt="lvl3" />
-				<p><span>Poubelle verte</span>
+				<p><span>Explorateur</span>
 				Tu as jeté plus de 10 déchets au total.</p>
 			</div>
 			<div class="grade">
 				<img src="images/lvl2.png" alt="lvl2" />
-				<p><span>Poubelle saine</span>
+				<p><span>Initié</span>
 				Tu as utilisé les poubelles de recyclage.</p>
 			</div>
 			<div class="grade">
 				<img src="images/lvl1.png" alt="lvl1" />
-				<p><span>Paper King</span>
+				<p><span>Débutant</span>
 				Tu as jeté 5 déchets durant les heures de cours.</p>
 			</div>
 		</div>

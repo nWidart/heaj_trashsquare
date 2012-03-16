@@ -8,7 +8,7 @@ if(isset($_COOKIE["user_id"])) {
 	if ( isset($_POST['submit']) ) {
 
 		if ( !isset($_POST['login']) || !isset($_POST['mdp']) ) {
-			$message = "Veillez entrez un login / mot de passe.";
+			$message = "<div class='error_msg'>Veillez entrez un login / mot de passe.</div>";
 		} else {
 
 			$login = $_POST["login"];
@@ -21,7 +21,7 @@ if(isset($_COOKIE["user_id"])) {
 	            WHERE login = " . $login . "&& password = " . $mdp);
 			}
 			if(!$result) {
-				$message = "Votre login ou mot de passe est incorrect.";
+				$message = "<div class='error_msg'>Votre login ou mot de passe est incorrect.</div>";
 			} else {
 				$row = mysql_fetch_array($result);
 				$expiration = time() + 90 * 24 * 60 * 60;
@@ -40,10 +40,10 @@ if(isset($_COOKIE["user_id"])) {
 <?php include('includes/header.php'); ?>
 
 <div class="container contenu">
+	<? if(isset($message)) {
+		echo($message);
+	} ?>
 	<div class="row">
-		<? if(isset($message)) { ?>
-		<p class="error"><?= $message; ?></p>
-		<? } ?>
 		<form name="s_login" method="post" action="login.php" class="login">
 			<label>Login:</label>
 			<input type="text" value="" placeholder="Entrer votre login" name="login" id="login" /><br />

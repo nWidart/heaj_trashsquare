@@ -19,7 +19,7 @@ if ( isset($_POST['submit']) ) {
 			WHERE login = " . $login );
 		// si erreur
 		if ( !$result ) {
-			$message .= '<p class="error_msg">Ce login n\'existe pas!</p>';
+			$message .= '<div class="error_msg">Ce login n\'existe pas!</div>';
 		}
 		else {
 			$row = mysql_fetch_array($result);
@@ -36,7 +36,7 @@ if ( isset($_POST['submit']) ) {
               )
          	";
          	mysql_query($query);
-         	$message .= "Action bien enregistr&eacute;e";
+         	$message .= '<div class="succeed_msg">Action bien enregistr&eacute;e</div>';
 		}	
 	}
 }
@@ -46,11 +46,12 @@ if ( isset($_POST['submit']) ) {
 <?php include('includes/header.php'); ?>
 
 <div class="container contenu">
+	<? if(isset($message)) {
+		echo($message);
+	} ?>
 	<div class="row">
-		<? if(isset($message)) { ?>
-		<p><?= $message; ?></p>
-		<? } ?>
 		<form class="check" action="" method="post">
+			<label for="login">Entrez voter login pour valider voter check-in.</label>
 			<select name ="poubelle">
 				<?php 
 					$sqlPoubelle = "SELECT * FROM poubelle";

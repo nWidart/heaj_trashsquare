@@ -23,10 +23,10 @@ function get_the_titre($score) {
 			$grade = "Aventurier";
 			break;
 		case 4:
-			$grade = "Exploreur";
+			$grade = "Explorateur";
 			break;
 		case 5:
-			$grade = "Mr Propre";
+			$grade = "Mr. Propre";
 			break;
 		case 6:
 			$grade = "Écologiste";
