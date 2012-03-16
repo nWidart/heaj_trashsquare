@@ -30,7 +30,7 @@ $query_top_rank = mysql_query($sql_get_top_rank);
                          <?php while ($top_rank = mysql_fetch_array($query_top_rank)) { ?>
                          <tr>
           				<td><?php echo $n; ?></td>
-          				<td><?php echo $top_rank['nom']; ?></td>
+          				<td><?php echo $top_rank['prenom'] . " " . substr($top_rank['nom'],0,1) . "." ; ?></td>
           				<td><?php echo $top_rank['count']; ?></td>
           				<?php $n++; ?>
           			</tr>
