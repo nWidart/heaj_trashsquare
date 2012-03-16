@@ -26,7 +26,7 @@ if(!isset($_COOKIE["user_id"]))
 		 			WHERE id=" . $_COOKIE["user_id"];
 		 	
 		 	mysql_query($sql) or die (mysql_error());
-		 	$message = '<span class="succes">Profil mit a jour!</span>';
+		 	$message = '<span class="succes">Profil mis &agrave; jour!</span>';
 		 }
 	} 
 

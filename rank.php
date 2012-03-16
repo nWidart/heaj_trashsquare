@@ -2,7 +2,18 @@
 <?php include_once('includes/functions.php'); ?>
 <?php $page_title = "Trashsquare | Rank"; ?>
 <?php include('includes/header.php'); ?>
+<?php 
+$sql_get_top_rank = "SELECT nom, prenom, COUNT(user_id) as count ";
+$sql_get_top_rank .= "FROM checkin AS c ";
+$sql_get_top_rank .= "INNER JOIN user ON user.id = c.user_id ";
+$sql_get_top_rank .= "GROUP BY user_id ORDER BY count DESC LIMIT 5";
+$query_top_rank = mysql_query($sql_get_top_rank);
+//$top_rank = mysql_fetch_array($query_top_rank);
 
+
+
+
+ ?>
 <div class="container contenu">
 	<div class="row">
           <?php include('includes/sidebar-userInfo.php'); ?>
@@ -12,94 +23,21 @@
           		<table>
           			<tr>
           				<th><img src="images/icn_trash.png" alt="Trash" /></th>
+                              <th><img src="images/icn_badge.png" alt="Badge" /></th>
           				<th><img src="images/icn_stat.png" alt="Stat" /></th>
-          				<th><img src="images/icn_code.png" alt="Code" /></th>
-          				<th><img src="images/icn_badge.png" alt="Badge" /></th>
-          				<th><img src="images/icn_crown.png" alt="Crown" /></th>
           			</tr>
-          			
-          			<tr>
-          				<td>1</td>
-          				<td>Moreno N.</td>
-          				<td>1350pts</td>
-          				<td>53</td>
-          				<td>B240</td>
+          			<?php $n = 1; ?>
+                         <?php while ($top_rank = mysql_fetch_array($query_top_rank)) { ?>
+                         <tr>
+          				<td><?php echo $n; ?></td>
+          				<td><?php echo $top_rank['nom']; ?></td>
+          				<td><?php echo $top_rank['count']; ?></td>
+          				<?php $n++; ?>
           			</tr>
-          			
-          			<tr>
-          				<td>2</td>
-          				<td>Anthony D.</td>
-          				<td>1235pts</td>
-          				<td>45</td>
-          				<td>B237</td>
-          			</tr>
-          			
-          			<tr>
-          				<td>3</td>
-          				<td>Julien D.</td>
-          				<td>1132pts</td>
-          				<td>40</td>
-          				<td>B238</td>
-          			</tr>
-          			
-          			<tr>
-          				<td>4</td>
-          				<td>Anne J.</td>
-          				<td>964pts</td>
-          				<td>32</td>
-          				<td>n/a</td>
-          			</tr>
-          			
-          			<tr>
-          				<td>5</td>
-          				<td>Gilles S.</td>
-          				<td>850pts</td>
-          				<td>24</td>
-          				<td>n/a</td>
-          			</tr>
-          			
-          			<tr>
-          				<td>6</td>
-          				<td>Gauthier B.</td>
-          				<td>820pts</td>
-          				<td>24</td>
-          				<td>n/a</td>
-          			</tr>
-          			
-          			<tr>
-          				<td>7</td>
-          				<td>Florian B.</td>
-          				<td>796pts</td>
-          				<td>22</td>
-          				<td>n/a</td>
-          			</tr>
-          			
-          			<tr>
-          				<td>8</td>
-          				<td>Célia S.</td>
-          				<td>698pts</td>
-          				<td>19</td>
-          				<td>n/a</td>
-          			</tr>
-          			
-          			<tr>
-          				<td>9</td>
-          				<td>Alexis W.</td>
-          				<td>600pts</td>
-          				<td>17</td>
-          				<td>n/a</td>
-          			</tr>
-          			
-          			<tr>
-          				<td>10</td>
-          				<td>Mathieu L.</td>
-          				<td>550pts</td>
-          				<td>13</td>
-          				<td>n/a</td>
-          			</tr>
+          		   <?php } ?>
           			
           		</table>
-          		<p>Vous êtes actuellement en <span>98ème</span> position</p>
+          		<!-- <p>Vous êtes actuellement en <span>98ème</span> position</p> -->
           	</div>
           
 		</div>
