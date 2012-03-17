@@ -16,6 +16,7 @@ include('includes/functions.php'); ?>
 		<?php include('includes/sidebar-userInfo.php'); ?>
 		<div class="sixcol">
 			<h2>Profil</h2>
+               
 			<span class="poubelle">Votre Score</span>
 			<p class="level"><?php echo get_the_titre( $score[1] ); ?></p>
 			<div class="ui-progress-bar ui-container" id="progress_bar">
