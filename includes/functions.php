@@ -1,12 +1,14 @@
 <?php
-function strip($nom,$prenom) {
+function strip($nom,$prenom,$classe) {
 	
 	$stripdonnees = array("nom" => "", 
-						  "prenom" => ""
+						  "prenom" => "",
+						  "classe" => ""
 						  );
 
 	$stripdonnees['nom'] = strip_tags(ucfirst(strtolower($nom)));
 	$stripdonnees['prenom'] = strip_tags(ucfirst(strtolower($prenom)));
+	$stripdonnees['classe'] = strip_tags(strtoupper($classe));
 
 	return $stripdonnees;
 }

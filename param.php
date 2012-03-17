@@ -9,7 +9,7 @@ if(!isset($_COOKIE["user_id"]))
      
 } else {
 	if ( isset($_POST['submit']) ) {
-		$stripdonnees = strip($_POST['nom'],$_POST['prenom']);
+		$stripdonnees = strip($_POST['nom'],$_POST['prenom'],$_POST['classe']);
 
 		if ( empty($stripdonnees['nom']) )
 		 {
@@ -22,7 +22,8 @@ if(!isset($_COOKIE["user_id"]))
 		 else {
 		 	$sql = "UPDATE user
 		 			SET `nom` = '" . $stripdonnees['nom'] . "',
-		 			`prenom` = '" . $stripdonnees['prenom'] . "'
+		 			`prenom` = '" . $stripdonnees['prenom'] . "',
+		 			`classe` = '" . $stripdonnees['classe'] . "'
 		 			WHERE id=" . $_COOKIE["user_id"];
 		 	
 		 	mysql_query($sql) or die (mysql_error());
@@ -77,6 +78,8 @@ $donnees = mysql_fetch_array($reponse);
 					<input type="text" name="nom" id="nom" value="<?php echo $donnees['nom']; ?>" alt="Nom" title="Entrez votre nom de famille"/><br />
 					<label for="prenom">Pr&eacute;nom:</label>
 					<input type="text" name="prenom" id="prenom" value="<?php echo $donnees['prenom']; ?>" alt="Prenom" title="Entrez votre prénom"/>
+					<label for="classe">Classe:</label>
+					<input type="text" name="classe" id="classe" value="<?php echo $donnees['classe']; ?>" alt="Classe" title="Entrez votre classe"/>
 				</fieldset>
 				<fieldset>
 					<legend>Champs fixes</legend>
