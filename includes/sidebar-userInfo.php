@@ -2,7 +2,6 @@
 	<?php 
 	if ( isset($userId) ) {
 	?>
-	<img src="images/avatar.png" alt="avatar">
 	<?php 
 	if ( $userPrenom == "" || $userNom == "") {
 		echo '<span class="error_msg">Tu n\'as pas encore entrer ton nom et prenom. Entre <a href="param.php">ton nom et prenom ici.</a></span>';
