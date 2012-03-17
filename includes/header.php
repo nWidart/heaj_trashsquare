@@ -11,6 +11,7 @@ if ( isset($_COOKIE["user_id"]) ) {
 	$userNom = $userData['nom'];
 	$userLogin = $userData['login'];
 	$userPassword = $userData['password'];
+	$userId = $userData['id'];
 
 
 	$sql_score = "SELECT user_id,COUNT(*) ";

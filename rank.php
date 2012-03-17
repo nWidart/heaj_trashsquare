@@ -16,7 +16,11 @@ $query_top_rank = mysql_query($sql_get_top_rank);
  ?>
 <div class="container contenu">
 	<div class="row">
-          <?php include('includes/sidebar-userInfo.php'); ?>
+          <?php 
+          //if ( isset($userId) ) {
+               include('includes/sidebar-userInfo.php');
+          //}
+          ?>
 		<div class="sixcol">
 			<h2>Classement</h2>
           	<div class="scores rank">
@@ -42,6 +46,9 @@ $query_top_rank = mysql_query($sql_get_top_rank);
           
 		</div>
 		<div class="threecol last">
+               <?php 
+               if ( isset($userId) ) {
+               ?>
 			<h2>Badges reçus</h2>
 			<div class="grade first">
 				<img src="images/lvl5.png" alt="lvl5" />
@@ -68,6 +75,7 @@ $query_top_rank = mysql_query($sql_get_top_rank);
 				<p><span>Débutant</span>
 				Tu as jeté 5 déchets durant les heures de cours.</p>
 			</div>
+               <?php } ?>
 		</div>
 	</div>
 </div>
