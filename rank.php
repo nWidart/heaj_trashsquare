@@ -3,7 +3,7 @@
 <?php $page_title = "Trashsquare | Rank"; ?>
 <?php include('includes/header.php'); ?>
 <?php 
-$sql_get_top_rank = "SELECT nom, prenom, COUNT(user_id) as count ";
+$sql_get_top_rank = "SELECT nom, prenom,classe, COUNT(user_id) as count ";
 $sql_get_top_rank .= "FROM checkin AS c ";
 $sql_get_top_rank .= "INNER JOIN user ON user.id = c.user_id ";
 $sql_get_top_rank .= "GROUP BY user_id ORDER BY count DESC";
@@ -36,6 +36,7 @@ $query_top_rank = mysql_query($sql_get_top_rank);
           				<td><?php echo $n; ?></td>
           				<td><?php echo $top_rank['nom'] . " " . substr($top_rank['prenom'],0,1) . "." ; ?></td>
           				<td><?php echo $top_rank['count']; ?></td>
+                              <td><?php echo $top_rank['classe']; ?></td>
           				<?php $n++; ?>
           			</tr>
           		   <?php } ?>
