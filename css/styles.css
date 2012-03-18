@@ -954,9 +954,7 @@ span.error_msg a:hover {
 
 
 }
-nav select {
-	display:none;
-}
+
 
 /* ========================================== */
 /* ! Provide higher res assets for iPhone 4   */
@@ -976,6 +974,10 @@ nav select {
     	width: 100px;
     	height: 38px;
 
+    }
+
+    .header {
+    	
     }
 
     .main-navigation { 
@@ -1027,4 +1029,27 @@ nav select {
 
 	}
 
+	.index {
+		width: auto;	
+		position: absolute;
+		height: 200px;
+		padding: 10px 0;
+		border: 1px solid #30474C;
+		background: white;
+		top: 50%;
+		left: 50%;
+		margin-left: -384px;
+		text-align: center;
+	}
+
+	li.param, li.logout {
+		/*width: 390px;*/
+	}
+	.ui-progress-bar .ui-progress {
+		/*width: 300px;*/
+	}
+
+	ul.connexion li:first-child {
+		visibility: hidden;
+	}
 }
