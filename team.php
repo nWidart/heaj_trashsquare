@@ -16,9 +16,15 @@
 						<li></li>
 					</ul>
 					<ul>
-						<li><h3>CSS/HTML</h3></li>
-						<li><a href="https://twitter.com/#!/CGraphic11">Anthony Dupont</a></li>
+						<li><h3>Making of</h3></li>
+						<li><a href="#">Anne Jouan</a></li>
+						<li><a href="#">Dorian De Ketelaere</a></li>
+						<li><a href="#">Valentin Bronfort</a></li>
 					</ul>	
+					<ul>
+						<li><h3>Recherche affiche</h3></li>
+						<li><a href="https://twitter.com/#!/l_ju_l">Julien De Vetter</a></li>
+					</ul>
 				</div>
 				<div class="fourcol">
 					<ul>
@@ -35,21 +41,24 @@
 						<li><a href="#">Arnaud Shockmel</a></li>
 						<li><a href="#">Simon Vreux</a></li>
 					</ul>	
+					<ul>
+						<li><h3>Coordination</h3></li>
+						<li><a href="https://twitter.com/#!/NaitanaMoreno">Moreno Naitana</a></li>
+						<li></li>
+						<li>Une idée originale de<a href="https://twitter.com/#!/MathieuLuyten">Mathieu Luyten</a></li>
+					</ul>	
 				</div>
 				<div class="fourcol last">
 					<ul>
 						<li><h3>Base de donnée, programmation</h3></li>
 						<li><a href="www.nicolaswidart.com">Nicolas Widart</a></li>
 						<li><a href="#">Simon Vreux</a></li>
-						<li><a href="#">Julien De Vetter</a></li>
 						<li></li>
 						
 					</ul>
 					<ul>
-						<li><h3>Making of</h3></li>
-						<li><a href="#">Anne Jouan</a></li>
-						<li><a href="#">Dorian De Ketelaere</a></li>
-						<li><a href="#">Valentin Bronfort</a></li>
+						<li><h3>CSS/HTML</h3></li>
+						<li><a href="https://twitter.com/#!/CGraphic11">Anthony Dupont</a></li>
 						<li></li>
 					</ul>		
 				</div>
