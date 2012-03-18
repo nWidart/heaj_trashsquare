@@ -15,7 +15,7 @@ a:hover {
  * Header
  */
 .header {
-	background: #689da8;
+	background : #689da8;
 	background: -webkit-linear-gradient(top, #689da8 0%,#7ab0bc 100%);
 	background: -moz-linear-gradient(top, #689da8 0%,#7ab0bc 100%);
 	background: -o-linear-gradient(top, #689da8 0%,#7ab0bc 100%);
@@ -814,6 +814,9 @@ span.error_msg a:hover {
 .activity .first{
 	margin-top: 30px;
 }
+nav select {
+	display: none;
+}
 
 
 /* ============================= */
@@ -955,7 +958,7 @@ span.error_msg a:hover {
 
 }
 nav select {
-	display: none;
+	display:none;
 }
 
 /* ========================================== */
@@ -976,10 +979,6 @@ nav select {
     	width: 100px;
     	height: 38px;
 
-    }
-
-    .header {
-    	
     }
 
     .main-navigation { 
@@ -1031,27 +1030,4 @@ nav select {
 
 	}
 
-	.index {
-		width: auto;	
-		position: absolute;
-		height: 200px;
-		padding: 10px 0;
-		border: 1px solid #30474C;
-		background: white;
-		top: 50%;
-		left: 50%;
-		margin-left: -384px;
-		text-align: center;
-	}
-
-	li.param, li.logout {
-		/*width: 390px;*/
-	}
-	.ui-progress-bar .ui-progress {
-		/*width: 300px;*/
-	}
-
-	ul.connexion li:first-child {
-		visibility: hidden;
-	}
 }
