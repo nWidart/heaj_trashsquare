@@ -289,7 +289,10 @@ span.error_msg a:hover {
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 }
-
+.index h2 {
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
 .index h2:nth-child(n+2) {
 	margin-top: 30px;
 	margin-bottom: 20px;
