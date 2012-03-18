@@ -4,7 +4,7 @@
 <div class="container contenu team">
 	<div class="row">
 		
-			<h2>Tu jettes, tu check et tu respectes …</h2>
+			<h2>Notre équipe</h2>
 			
 				<div class="fourcol">
 					<ul>
