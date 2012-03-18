@@ -6,7 +6,8 @@ body {
 }
 a {
 	text-decoration: none;
-	color: red;
+	color: #689da8;
+	border-bottom: 1px solid #689da8;
 }
 a:hover {
 	border-bottom: 1px dotted #fff;
@@ -289,7 +290,8 @@ span.error_msg a:hover {
 	border-radius: 2px;
 }
 
-.index h2{
+.index h2:nth-child(n+2) {
+	margin-top: 30px;
 	margin-bottom: 20px;
 }
 .index .row > div {
