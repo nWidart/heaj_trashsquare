@@ -51,7 +51,7 @@ if ( isset($_POST['submit']) ) {
 	} ?>
 	<div class="row">
 		<form class="check" action="" method="post">
-			<label for="login">Entrez voter login pour valider voter check-in.</label>
+			<label for="login">Entrez le nom de la poubelle ainsi que votre login pour valider votre check-in.</label>
 			<select name ="poubelle">
 				<?php 
 					$sqlPoubelle = "SELECT * FROM poubelle";

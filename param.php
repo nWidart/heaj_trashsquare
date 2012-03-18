@@ -13,11 +13,14 @@ if(!isset($_COOKIE["user_id"]))
 
 		if ( empty($stripdonnees['nom']) )
 		 {
-			 $message .= "Votre nom doit comporter entre 4 et 20 caractères<br />" ; 
+			 $message .= "Votre nom ne peut pas etre vide.<br />" ; 
 		 } 
 		 if ( empty($stripdonnees['prenom']) ) 
 		 {
-			 $message .= "Votre prenom doit comporter entre 4 et 20 caractères<br />" ; 
+			 $message .= "Votre prenom ne peut pas etre vide.<br />" ; 
+		 }
+		 if ( !preg_match("/^[1-3]+[A-Z]{3}[1-3]/",$stripdonnees['classe']) ) {
+		 	$message .= "classe erreur";
 		 }
 		 else {
 		 	$sql = "UPDATE user
