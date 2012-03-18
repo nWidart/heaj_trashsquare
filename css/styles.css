@@ -269,7 +269,7 @@ span.error_msg a:hover {
 	background: #1e9139;
 }
 
-.check, .login, .index{
+.check, .login {
 	position: absolute;
 	width: 1150px;
 	height: 200px;
@@ -290,8 +290,35 @@ span.error_msg a:hover {
 }
 
 .index h2{
-	margin-top: 90px;
+	margin-bottom: 20px;
 }
+.index .row > div {
+	background: #fff;
+	border: 1px solid #30474c;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	padding: 10px;
+}
+.index .row > div > p {
+	margin: 8px 0px;
+}
+.index a.twitter {
+	background: url('../images/twitter_32.png') no-repeat;
+	width: 32px;height: 32px;
+	display: block;
+}
+.index ul li {
+	float: left;
+	margin-right: 5px;
+}
+.index a.facebook {
+	background: url('../images/facebook_32.png') no-repeat;
+	width: 32px;height: 32px;
+	display: block;
+}
+
+
 
 .profile_menu li {
 	display: block;
