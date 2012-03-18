@@ -10,7 +10,7 @@ if(!isset($_COOKIE["user_id"]))
 } else {
 	if ( isset($_POST['submit']) ) {
 		$stripdonnees = strip($_POST['nom'],$_POST['prenom'],$_POST['classe']);
-
+		$message = "";
 		if ( empty($stripdonnees['nom']) )
 		 {
 			 $message .= "Votre nom ne peut pas etre vide.<br />" ; 
@@ -20,7 +20,7 @@ if(!isset($_COOKIE["user_id"]))
 			 $message .= "Votre prenom ne peut pas etre vide.<br />" ; 
 		 }
 		 if ( !preg_match("/^[1-3]+[A-Z]{3}[1-3]/",$stripdonnees['classe']) ) {
-		 	$message .= "classe erreur";
+		 	$message .= "Merci d'entrez une classe correcte.";
 		 }
 		 else {
 		 	$sql = "UPDATE user
