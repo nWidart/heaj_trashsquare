@@ -819,24 +819,211 @@ span.error_msg a:hover {
 /* ! Layout for mobile version   */
 /* ============================= */
 
-@media handheld, only screen and (max-width: 767px) {
+@media handheld, only screen and (max-width: 780px) {
 
 	body {
 		
 	}
+	
+	.header h1 a {
+			background-position: top;
+			height: 60px;
+	}
+
+	.main-navigation {
+		position: absolute;
+		right: 120px;
+		top: 44px;
+
+		width: 400px;
+		
+	}
+	
+	.index {
+		width: auto;	
+		position: relative;
+		height: 200px;
+		padding: 10px 0;
+		border: 1px solid #30474C;
+		background: white;
+		top: 50%;
+		left: 50%;
+		margin-left: -384px;
+		text-align: center;
+	}
+	
+	.login {
+		position: absolute;
+		margin: 0 auto;
+		height: 200px;
+		padding: 40px 0 0 0;
+		border: 1px solid #30474C;
+		background: white;
+		top: 300px;
+		left: 50%;
+		margin-top: 0px;
+		margin-left: -200px;
+		text-align: center;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+	}
+
+	.login label{
+		display: block;
+		float: left;
+		width: 100px;
+		color: #59848E;
+		font-size: 20px;
+		margin-top: 10px;
+		margin-left: 25px;
+		margin-right: 0;
+		text-align: left;
+	}
+
+	form input[type="text"], form input[type="password"] {
+		border: 1px solid #30474C;
+		width: 190px;
+		height: 30px;
+		padding: 3px 6px;
+		font-size: 18px;
+		color: #585858;
+		-webkit-box-shadow: 0 0 3px #30474c;
+		-moz-box-shadow: 0 0 3px #30474c;
+		box-shadow: 0 0 3px #30474c;
+		margin-bottom: 20px;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+	}
+	.error_msg {
+		
+		}	
+
+	ul.connexion li a  {
+		position: absolute;
+		right: 25px;
+		top: 58px;
+		
+		background: #EEE;
+		width: 100px;
+		border: 1px solid white;
+		border-bottom: none;
+		-webkit-border-top-right-radius: 2px;
+		-webkit-border-top-left-radius: 2px;
+		-moz-border-top-right-radius: 2px;
+		-moz-border-top-left-radius: 2px;
+		border-top-right-radius: 2px;
+		border-top-left-radius: 2px;
+		-webkit-box-shadow: 0px -1px 1px #30474c;
+		-moz-box-shadow: 0px -1px 1px #30474c;
+		box-shadow: 0px -1px 1px #30474c;
+		-webkit-transition: all .3s ease-in-out;
+		-moz-transition: all .3s ease-in-out;
+		-o-transition: all .3s ease-in-out;
+		-ms-transition: all .3s ease-in-out;
+		transition: all .3s ease-in-out;
+		color: #59848E;
+		cursor: pointer;
+		padding-bottom: 3px;
+		padding: 10px 0;
+		display: block;
+		text-align: center;
+		border: none;
+
+	}
+
+	ul.connexion ul {
+		width: 400px;
+	}
+
+	.row .sixcol {
+		
+		width: 700px;
+	}
+
+	.header {
+		background-color: #689DA8;
+		width: 768px;
+	}
+	
+	li.param, li.logout {
+		width: 730px;
+	}
+
 
 }
-
+nav select {
+	display:none;
+}
 
 /* ========================================== */
 /* ! Provide higher res assets for iPhone 4   */
 /* ========================================== */
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) { 
 
 /*	.logo {
 		background: url(logo2x.jpg) no-repeat;
 		background-size: 212px 303px;
 	}*/
+
+	
+	nav ul     { display: none; }
+    nav select { 
+    	display: inline-block; 
+    	width: 100px;
+    	height: 38px;
+
+    }
+
+    .main-navigation { 
+		position: absolute;
+		left: -145px;
+		top: 86px;
+		z-index: 1;
+		
+	}
+
+
+	.check label {
+		width: 480px;
+		display: block;
+		font-size: 18px;
+		color: #59848E;
+		margin-bottom: 20px;
+	}
+
+	ul.connexion li a  {
+		position: absolute;
+		right: 5px;
+		top: 100px;
+		
+		background: #59848E;
+		width: 100px;
+		border: 1px solid white;
+		border-bottom: none;
+		-webkit-border-top-right-radius: 0px;
+		-webkit-border-top-left-radius: 0px;
+		-moz-border-top-right-radius: 0px;
+		-moz-border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+		border-top-left-radius: 0px;
+		-webkit-box-shadow: 0px -1px 1px #fff;
+		-moz-box-shadow: 0px -1px 1px #fff;
+		-webkit-transition: all .3s ease-in-out;
+		-moz-transition: all .3s ease-in-out;
+		-o-transition: all .3s ease-in-out;
+		-ms-transition: all .3s ease-in-out;
+		transition: all .3s ease-in-out;
+		color: #fff;
+		cursor: pointer;
+		padding-bottom: 3px;
+		padding: 10px 0;
+		display: block;
+		text-align: center;
+		border: none;
+
+	}
 
 }
