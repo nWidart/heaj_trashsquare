@@ -67,7 +67,6 @@ if ( isset($_COOKIE["user_id"]) ) {
 					<li class="classement"><a href="index.php">Home</a></li>
 					<li class="classement"><a href="rank.php">Classement</a></li>
 					<li class="profil"><a href="profil.php">Profil</a></li>
-					<li class="map"><a href="map.php">Map</a></li>
 				</ul>
 			</nav>
 		</div>
