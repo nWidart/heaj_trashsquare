@@ -45,7 +45,7 @@
 						<li><h3>Coordination</h3></li>
 						<li><a href="https://twitter.com/#!/NaitanaMoreno">Moreno Naitana</a></li>
 						<li></li>
-						<li>Une idée originale de<a href="https://twitter.com/#!/MathieuLuyten">Mathieu Luyten</a></li>
+						<li>Une idée originale de <a href="https://twitter.com/#!/MathieuLuyten">Mathieu Luyten</a></li>
 					</ul>	
 				</div>
 				<div class="fourcol last">
