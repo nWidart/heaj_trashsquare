@@ -15,8 +15,9 @@
 			<p>Une fois votre déchet jeté, votre compte sera crédité d'un check-in ! Une seule adresse alors : <a href="www.trashsquare.be">trashsquare.be</a>! Vous aurez la possibilité d'y compléter votre compte. Plus vous possédez de check-in, plus votre grade augmente.</p>
 			<p>À votre tour de devenir le roi !</p>
 		</div>
-		<div class="twocol last">
+		<div class="twocol last sidebar">
 			<h3>Nous suivre ...</h3>
+			<a href="team.php">Découvre notre équipe!</a>
 			<ul>
 				<li><a href="https://twitter.com/#!/Trashsquare" class="twitter"></a></li>
 				<li><a href="https://www.facebook.com/Trashsquare" class="facebook"></a></li>

@@ -38,6 +38,7 @@ a:hover {
 	background: url('../images/trashsquare-190.png') no-repeat;
 	width: 190px;height: 45px;
 	display: block;
+	border:none;
 }
 
 .header h1 a:hover{
@@ -148,6 +149,7 @@ ul.connexion li a{
 	cursor: pointer;
 	padding-bottom: 3px;
 	font-weight: bold;
+	border:none;
 }
 
 ul.connexion li a:hover{
@@ -157,6 +159,15 @@ ul.connexion li a:hover{
 /* ------------------------------------------------------------------------------------------------------------------------
  * Contenu
  */
+.team h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #689da8;
+}
+
+
+
 .contenu {
 	margin-top: 60px;
 }
@@ -288,6 +299,10 @@ span.error_msg a:hover {
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
+}
+
+.index .sidebar ul {
+	margin-top: 20px;
 }
 .index h2 {
 	margin-top: 30px;
