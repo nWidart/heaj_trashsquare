@@ -954,7 +954,9 @@ span.error_msg a:hover {
 
 
 }
-
+nav select {
+	display: none;
+}
 
 /* ========================================== */
 /* ! Provide higher res assets for iPhone 4   */
