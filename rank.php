@@ -9,11 +9,7 @@ $sql_get_top_rank .= "INNER JOIN user ON user.id = c.user_id ";
 $sql_get_top_rank .= "GROUP BY user_id ORDER BY count DESC";
 $query_top_rank = mysql_query($sql_get_top_rank);
 //$top_rank = mysql_fetch_array($query_top_rank);
-
-
-
-
- ?>
+?>
 <div class="container contenu">
 	<div class="row">
           <?php 

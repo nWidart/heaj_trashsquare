@@ -3,13 +3,19 @@
 		header( "location: login.php" );
 		exit();
 	}
-
-
 ?>
 <?php $page_title = "Trashsquare | Profil"; ?>
 
 <?php include('includes/header.php'); 
 include('includes/functions.php'); ?>
+<?php 
+$sql_get_top_rank = "SELECT nom, prenom,classe, COUNT(user_id) as count ";
+$sql_get_top_rank .= "FROM checkin AS c ";
+$sql_get_top_rank .= "INNER JOIN user ON user.id = c.user_id ";
+$sql_get_top_rank .= "GROUP BY user_id ORDER BY count DESC";
+$query_top_rank = mysql_query($sql_get_top_rank);
+//$top_rank = mysql_fetch_array($query_top_rank);
+?>
 
 <div class="container contenu">
 	<div class="row">
@@ -38,59 +44,20 @@ include('includes/functions.php'); ?>
           		<table>
           			<tr>
           				<th><img src="images/icn_trash.png" alt="Trash" /></th>
-          				<th><img src="images/icn_stat.png" alt="Stat" /></th>
-          				<th><img src="images/icn_code.png" alt="Code" /></th>
-          				<th><img src="images/icn_crown.png" alt="Crown" /></th>
-          				<th><img src="images/icn_badge.png" alt="Badge" /></th>
+                              <th><img src="images/icn_badge.png" alt="Badge" /></th>
+                              <th><img src="images/icn_stat.png" alt="Stat" /></th>
           			</tr>
           			
-          			<tr>
-          				<td>B240</td>
-          				<td>32</td>
-          				<td>5</td>
-          				<td>3</td>
-          				<td>#3 <img src="images/arrow-up.png" alt="Up" /></td>
-          			</tr>
-          			
-          			<tr>
-          				<td>B239</td>
-          				<td>19</td>
-          				<td>6</td>
-          				<td>2</td>
-          				<td>#5 <img src="images/arrow-up.png" alt="Up" /></td>
-          			</tr>
-          			
-          			<tr>
-          				<td>B238</td>
-          				<td>12</td>
-          				<td>3</td>
-          				<td>1</td>
-          				<td>#23 <img src="images/arrow-equal.png" alt="Equal" /></td>
-          			</tr>
-          			
-          			<tr>
-          				<td>B237</td>
-          				<td>5</td>
-          				<td>2</td>
-          				<td>0</td>
-          				<td>#84 <img src="images/arrow-down2.png" alt="Down" /></td>
-          			</tr>
-          			
-          			<tr>
-          				<td>B236</td>
-          				<td>2</td>
-          				<td>0</td>
-          				<td>0</td>
-          				<td>#98 <img src="images/arrow-down2.png" alt="Down" /></td>
-          			</tr>
-          			
-          			<tr>
-          				<td>B235</td>
-          				<td>0</td>
-          				<td>0</td>
-          				<td>0</td>
-          				<td>n/a</td>
-          			</tr>
+          			<?php $n = 1; ?>
+                         <?php while ($top_rank = mysql_fetch_array($query_top_rank)) { ?>
+                         <tr>
+                              <td><?php echo $n; ?></td>
+                              <td><?php echo $top_rank['nom'] . " " . substr($top_rank['prenom'],0,1) . "." ; ?></td>
+                              <td><?php echo $top_rank['count']; ?></td>
+                              <td><?php echo $top_rank['classe']; ?></td>
+                              <?php $n++; ?>
+                         </tr>
+                       <?php } ?>
           		</table>
           		<a href="map.php"><img src="images/blue-arrow.png" alt="Locaux" /> Voir tous les locaux</a>
           		<a href="rank.php"><img src="images/blue-arrow.png" alt="Locaux" /> Voir le classement</a>

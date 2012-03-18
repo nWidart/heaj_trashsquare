@@ -14,6 +14,7 @@ function strip($nom,$prenom,$classe) {
 }
 
 function get_the_titre($score) {
+	
 	switch ($score) {
 		case 1:
 			$grade = "Débutant";
@@ -54,13 +55,35 @@ function get_the_titre($score) {
 		case 13:
 			$grade = "Roi";
 			break;
-
+		case 14:
+			$grade = "Roi";
+			break;
+		case 15:
+			$grade = "Roi";
+			break;
+		case 16:
+			$grade = "Roi";
+			break;
+		case 17:
+			$grade = "Roi";
+			break;
+		case 18:
+			$grade = "Roi";
+			break;
+		case 19:
+			$grade = "Roi";
+			break;
+		case 20:
+			$grade = "Roi";
+			break;
+		case 21:
+			$grade = "Roi";
+			break;
 		
 		default:
 			$grade = "Débutant";
 			break;
 	}
-
 	return $grade;
 }
 
