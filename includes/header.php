@@ -47,7 +47,8 @@ if ( isset($_COOKIE["user_id"]) ) {
 	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/styles.css" type="text/css" media="print" />
 	<link rel="stylesheet" href="css/progressbar.css" type="text/css" media="screen" />
-
+	<link rel="icon" type="image/png" href="images/favicon.png" />
+	<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" /><![endif]-->
 	
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
