@@ -17,7 +17,7 @@
 					</ul>
 					<ul>
 						<li><h3>Making of</h3></li>
-						<li><a href="#">Anne Jouan</a></li>
+						<li><a href="https://twitter.com/#!/Nantiee">Anne Jouan</a></li>
 						<li><a href="#">Dorian De Ketelaere</a></li>
 						<li><a href="#">Valentin Bronfort</a></li>
 					</ul>	
@@ -44,7 +44,7 @@
 					<ul>
 						<li><h3>Coordination</h3></li>
 						<li><a href="https://twitter.com/#!/NaitanaMoreno">Moreno Naitana</a></li>
-						<li></li>
+						<li><a href="">Maxime Gengler</a></li>
 						<li>Une idée originale de <a href="https://twitter.com/#!/MathieuLuyten">Mathieu Luyten</a></li>
 					</ul>	
 				</div>
@@ -53,6 +53,7 @@
 						<li><h3>Base de donnée, programmation</h3></li>
 						<li><a href="www.nicolaswidart.com">Nicolas Widart</a></li>
 						<li><a href="#">Simon Vreux</a></li>
+						<li><a href="https://twitter.com/#!/SkoozG">Gilles Schaus</a></li>
 						<li></li>
 						
 					</ul>
@@ -60,7 +61,20 @@
 						<li><h3>CSS/HTML</h3></li>
 						<li><a href="https://twitter.com/#!/CGraphic11">Anthony Dupont</a></li>
 						<li></li>
-					</ul>		
+					</ul>	
+					<ul>
+						<li><h3>T-shirts</h3></li>
+						<li><a href="https://twitter.com/#!/Nantiee">Anne Jouan</a></li>
+						<li></li>
+					</ul>	
+					<ul>
+						<li><h3>Stickers</h3></li>
+						<li><a href="#">Célia Samyn</a></li>
+						<li><a href="#">Wiliam Robert</a></li>
+						<li><a href="#">Eric Deloyer</a></li>
+						<li><a href="#">Thomas Mathieu</a></li>
+						<li><a href="#">Florian Bies</a></li>
+					</ul>
 				</div>
 			
 		
