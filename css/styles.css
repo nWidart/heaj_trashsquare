@@ -13,6 +13,17 @@ a {
 a:hover {
 	border-bottom: 1px dotted #fff;
 }
+.logincode p {
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #689da8;
+}
+.logincode p strong {
+	font-weight: bold;
+}
+.logincode .scores {
+	padding: 30px;
+}
 /* ------------------------------------------------------------------------------------------------------------------------
  * Header
  */

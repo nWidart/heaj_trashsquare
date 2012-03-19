@@ -8,28 +8,25 @@ $sql_get_login_code .= "FROM user";
 $query_login_code = mysql_query($sql_get_login_code);
 //$top_rank = mysql_fetch_array($query_top_rank);
 ?>
-<div class="container contenu">
+<div class="container logincode">
 	<div class="row">
 
 		<div class="sixcol">
 			
-          	<div class="scores rank">
-          		<table>
-          			<tr>
-          				<th>login</th>
-                        <th>code</th>
-          			</tr>
+          	<div class="scores">
+          		
           			<?php $n = 1; ?>
-                         <?php while ($login_code = mysql_fetch_array($query_login_code)) { ?>
-                         <tr>
-          				<td>Login : <?php echo $login_code['login']; ?></td>
-          				<td>Mot de passe : <?php echo $login_code['password']; ?></td>
-          				
-          				<?php $n++; ?>
-          			</tr>
+                    <?php while ($login_code = mysql_fetch_array($query_login_code)) { ?>
+                        
+                        <p>
+          				Login : <strong><?php echo $login_code['login']; ?></strong> <br />
+          				Mot de passe : <strong><?php echo $login_code['password']; ?></strong>
+          				</p>
+          			<?php $n++; ?>
+          			
           		   <?php } ?>
           			
-          		</table>
+          		
           		
           	</div>
           
