@@ -45,6 +45,7 @@ if ( isset($_COOKIE["user_id"]) ) {
 	<link rel="stylesheet" href="css/1140.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/styles.css" type="text/css" media="print" />
 	<link rel="stylesheet" href="css/progressbar.css" type="text/css" media="screen" />
 
 	
