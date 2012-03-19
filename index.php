@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="ninecol">
 			<h2>Tu jettes, tu checkes et tu respectes …</h2>
-			<p>Quel est le point commun entre une école pleine de déchets, un code barre, et une fresque ? Trashsquare ! Qu'est-ce que cet <a href="https://twitter.com/#!/Trashsquare" class="twitter">oiseau-là</a> ?</p>
+			<p>Quel est le point commun entre une école pleine de déchets, un code barre, et une fresque ? Trashsquare ! Qu'est-ce que cet <a href="https://twitter.com/#!/Trashsquare">oiseau-là</a> ?</p>
 			<p>Dans quelques jours vous verrez déambuler dans l'école de drôles de gens, arborant fièrement leur projet dans le dos et vous incitant à aller jeter vos canettes, papiers et autres objets indésirables dans leur poubelle , n'ayez pas peur ! Non, ce n'est pas une secte, et ils sont moins effrayants qu'ils n'en ont l'air.</p>
 
 			<p>Trashsquare c'est une idée simple : rendre ludique le fait de jeter ses déchets. Vous connaissez tous Foursquare qui vous permet de devenir roi du monde à coups de check-in. Nous adaptons ce principe en créant Trashsquare : une poubelle à votre disposition et la possibilité de devenir roi de la propreté !</p>
