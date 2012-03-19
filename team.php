@@ -60,7 +60,7 @@
 					<ul>
 						<li><h3>CSS/HTML</h3></li>
 						<li><a href="https://twitter.com/#!/CGraphic11">Anthony Dupont</a></li>
-						<li></li>
+						<li><a href="www.nicolaswidart.com">Nicolas Widart</a></li>
 					</ul>	
 					<ul>
 						<li><h3>T-shirts</h3></li>
