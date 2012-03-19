@@ -360,7 +360,9 @@ span.error_msg a:hover {
 	position: relative;
 	border:none;
 }
-
+.profile_menu li a {
+	border: none;
+}
 .profile_menu li.param:after {
 	content: '';
 	background: url('../images/icn_param_white.png') 0px 0;
