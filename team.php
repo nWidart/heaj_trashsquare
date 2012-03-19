@@ -30,7 +30,7 @@
 				<div class="fourcol">
 					<ul>
 						<li><h3>Picto, Layout</h3></li>
-						<li><a href="#">Florian Bies</a></li>
+						<li><a href="https://twitter.com/#!/fl0fl0w">Florian Bies</a></li>
 						<li><a href="#">Célia Samyn</a></li>
 						<li><a href="https://twitter.com/#!/NaitanaMoreno">Moreno Naitana</a></li>
 						<li></li>
@@ -72,7 +72,7 @@
 						<li><a href="#">Wiliam Robert</a></li>
 						<li><a href="#">Eric Deloyer</a></li>
 						<li><a href="#">Thomas Mathieu</a></li>
-						<li><a href="#">Florian Bies</a></li>
+						<li><a href="https://twitter.com/#!/fl0fl0w">Florian Bies</a></li>
 					</ul>
 				</div>
 			
