@@ -50,7 +50,7 @@
 				<div class="fourcol last">
 					<ul>
 						<li><h3>Base de donnée, programmation</h3></li>
-						<li><a href="www.nicolaswidart.com">Nicolas Widart</a></li>
+						<li><a href="http://www.nicolaswidart.com">Nicolas Widart</a></li>
 						<li><a href="#">Simon Vreux</a></li>
 						<li><a href="https://twitter.com/#!/SkoozG">Gilles Schaus</a></li>
 						<li></li>
@@ -59,7 +59,7 @@
 					<ul>
 						<li><h3>CSS/HTML</h3></li>
 						<li><a href="https://twitter.com/#!/CGraphic11">Anthony Dupont</a></li>
-						<li><a href="www.nicolaswidart.com">Nicolas Widart</a></li>
+						<li><a href="http://www.nicolaswidart.com">Nicolas Widart</a></li>
 					</ul>	
 					<ul>
 						<li><h3>T-shirts</h3></li>
