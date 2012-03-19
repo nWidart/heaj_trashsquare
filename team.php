@@ -24,6 +24,7 @@
 					<ul>
 						<li><h3>Recherche affiche</h3></li>
 						<li><a href="https://twitter.com/#!/l_ju_l">Julien De Vetter</a></li>
+						<li><a href="">Maxime Gengler</a></li>
 					</ul>
 				</div>
 				<div class="fourcol">
@@ -43,7 +44,6 @@
 					<ul>
 						<li><h3>Coordination</h3></li>
 						<li><a href="https://twitter.com/#!/NaitanaMoreno">Moreno Naitana</a></li>
-						<li><a href="">Maxime Gengler</a></li>
 						<li>Une idée originale de <a href="https://twitter.com/#!/MathieuLuyten">Mathieu Luyten</a></li>
 					</ul>	
 				</div>
