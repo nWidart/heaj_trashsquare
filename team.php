@@ -39,7 +39,6 @@
 						<li><a href="https://twitter.com/#!/MathieuLuyten">Mathieu Luyten</a></li>
 						<li><a href="#">Gil Servais</a></li>
 						<li><a href="#">Arnaud Shockmel</a></li>
-						<li><a href="#">Simon Vreux</a></li>
 					</ul>	
 					<ul>
 						<li><h3>Coordination</h3></li>
