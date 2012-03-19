@@ -4,7 +4,7 @@
 <div class="container contenu index">
 	<div class="row">
 		<div class="ninecol">
-			<h2>Tu jettes, tu check et tu respectes …</h2>
+			<h2>Tu jettes, tu checkes et tu respectes …</h2>
 			<p>Quel est le point commun entre une école pleine de déchets, un code barre, et une fresque ? Trashsquare ! Qu'est-ce que cet oiseau-là ?</p>
 			<p>Dans quelques jours vous verrez déambuler dans l'école de drôles de gens, arborant fièrement leur projet dans le dos et vous incitant à aller jeter vos canettes, papiers et autres objets indésirables dans leur poubelle , n'ayez pas peur ! Non, ce n'est pas une secte, et ils sont moins effrayants qu'ils n'en ont l'air.</p>
 
