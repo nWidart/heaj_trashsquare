@@ -22,8 +22,8 @@ $query_login_code = mysql_query($sql_get_login_code);
           			<?php $n = 1; ?>
                          <?php while ($login_code = mysql_fetch_array($query_login_code)) { ?>
                          <tr>
-          				<td><?php echo $login_code['login']; ?></td>
-          				<td><?php echo $login_code['password']; ?></td>
+          				<td>Login : <?php echo $login_code['login']; ?></td>
+          				<td>Mot de passe : <?php echo $login_code['password']; ?></td>
           				
           				<?php $n++; ?>
           			</tr>
