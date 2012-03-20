@@ -25,6 +25,7 @@ if ( isset($_POST['submit']) ) {
 			$row = mysql_fetch_array($result);
 			$user_id = $row['id'];
 			$poubelle_id = $_POST['poubelle'];
+
 			$query = "INSERT INTO 
 				checkin(
                    	user_id,
@@ -60,7 +61,11 @@ if ( isset($_POST['submit']) ) {
 
 					for ($count = 1; $count <= $nombrePoubelle; $count++) {
 						while ( $nomPoubelle = mysql_fetch_array($resultsPoubelle) ) {
-							echo '<option value="'. $nomPoubelle['id'] . '">' . $nomPoubelle['nom'] . '</option>';
+							if ( $poubelle_id == $nomPoubelle['id'] ) {	
+								echo '<option value="'. $nomPoubelle['id'] . '" SELECTED>' . $nomPoubelle['nom'] . '</option>';
+							} else {
+								echo '<option value="'. $nomPoubelle['id'] . '">' . $nomPoubelle['nom'] . '</option>'; 
+							}
 						}
 					}
 				?>
