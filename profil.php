@@ -12,7 +12,7 @@ include('includes/functions.php'); ?>
 $sql_get_top_rank = "SELECT nom, prenom,classe, COUNT(user_id) as count ";
 $sql_get_top_rank .= "FROM checkin AS c ";
 $sql_get_top_rank .= "INNER JOIN user ON user.id = c.user_id ";
-$sql_get_top_rank .= "GROUP BY user_id ORDER BY count DESC";
+$sql_get_top_rank .= "GROUP BY user_id ORDER BY count DESC LIMIT 10";
 $query_top_rank = mysql_query($sql_get_top_rank);
 //$top_rank = mysql_fetch_array($query_top_rank);
 ?>
@@ -52,7 +52,11 @@ $query_top_rank = mysql_query($sql_get_top_rank);
                          <?php while ($top_rank = mysql_fetch_array($query_top_rank)) { ?>
                          <tr>
                               <td><?php echo $n; ?></td>
-                              <td><?php echo $top_rank['nom'] . " " . substr($top_rank['prenom'],0,1) . "." ; ?></td>
+                              <?php if ( $top_rank['nom'] == "" || $top_rank['prenom'] == "")  {  ?>
+		          				<td>N/A</td>
+		          				<?php } else { ?>
+		          				<td><?php echo $top_rank['nom'] . " " . substr($top_rank['prenom'],0,1) . "." ; ?></td>
+		          				<?php } ?>
                               <td><?php echo $top_rank['count']; ?></td>
                               <td><?php echo $top_rank['classe']; ?></td>
                               <?php $n++; ?>
