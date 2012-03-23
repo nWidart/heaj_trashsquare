@@ -1,4 +1,7 @@
-<?php 
+<?php
+// require_once('includes/init.php');
+
+
 	if(!isset($_COOKIE["user_id"])) {
 		header( "location: login.php" );
 		exit();

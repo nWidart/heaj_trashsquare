@@ -1,4 +1,5 @@
 <?
+require_once('includes/init.php');
 include_once('includes/db_connect.php');
 // Redirige l'utilisateur s'il n'est pas identifié
 if(empty($_COOKIE["user_id"]))
@@ -7,11 +8,7 @@ if(empty($_COOKIE["user_id"]))
 }
 else
 {
-     
-     // Suppression des cookies
-     setcookie("user_id", "", time() - 1, "/");
-     
+    $session->logout();
      // Redirection de l'utilisateur
 	header( "location: profil.php" );
-     
 }

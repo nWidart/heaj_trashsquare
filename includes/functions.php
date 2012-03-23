@@ -79,7 +79,6 @@ function get_the_titre($score) {
 		case 21:
 			$grade = "Roi";
 			break;
-		
 		default:
 			$grade = "Débutant";
 			break;
@@ -99,4 +98,14 @@ function get_the_equivalent_bar_width($score) {
 	}
 
 	return $bw;
+}
+
+function __autoload($class_nome) {
+	$class_nome = strtolower($class_nome);
+	$path = LIB_PATH.DS."{class_nome}.php";
+	if ( file_exists($path) ) {
+		require_once($path);
+	} else {
+		die ("The file {$class_nome}.php could not be found.");
+	}
 }

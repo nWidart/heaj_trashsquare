@@ -1,8 +1,8 @@
 <?php
-require_once('includes/init.php');
+require_once('../includes/init.php');
 
 if ($session->is_logged_in()) {
-	header( "location: profil.php" );
+	header( "location: ../profil.php" );
 }
 
 if ( isset($_POST['submit']) ) {
@@ -13,7 +13,7 @@ if ( isset($_POST['submit']) ) {
 
 	if ($found_user) {
 		$session ->login($found_user);
-		header( "location: profil.php" );
+		header( "location: ../profil.php" );
 	} else {
 		$message = "Login / Password incorrect.";
 	}
@@ -23,16 +23,15 @@ if ( isset($_POST['submit']) ) {
 }
 
 ?>
-
-<?php $page_title = "Trashsquare | login"; ?>
-<?php include('includes/header.php'); ?>
+<?php $page_title = "Trashsquare | login OOP"; ?>
+<?php include('../includes/header.php'); ?>
 
 <div class="container contenu">
 	<? if(isset($message)) {
 		echo($message);
 	} ?>
 	<div class="row">
-		<form name="s_login" method="post" action="login.php" class="login">
+		<form name="s_login" method="post" action="admin-login.php" class="login">
 			<label>Login:</label>
 			<input type="text" value="" placeholder="Entrer votre login" name="login" id="login" /><br />
 			<label>Password:</label>
