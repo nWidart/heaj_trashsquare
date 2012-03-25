@@ -1,7 +1,7 @@
 <?php
 
 class Session {
-	private $logged_in=false;
+	private $logged_in = false;
 	public $user_id;
 
 	function __construct() {
@@ -21,22 +21,21 @@ class Session {
 	public function login($user) {
 		// database should find user based on username/password
 		if($user){
-			$expiration = time() + 3600;
-			setcookie("user_id",  $user->id, $expiration, "/");
-			$this->user_id = $_COOKIE['user_id'];
+			$this->user_id = $user->id;
+			$_SESSION['user_id'] = $user->id;
 			$this->logged_in = true;
 		}
   }
 
 	public function logout() {
-		// Suppression des cookies
-		setcookie("user_id", "", time() - 1, "/");
+		unset($_SESSION['user_id']);
+		unset($this->user_id);
 		$this->logged_in = false;
 	}
 
 	private function check_login() {
-		if(isset($_COOKIE['user_id'])) {
-			$this->user_id = $_COOKIE['user_id'];
+		if(isset($_SESSION['user_id'])) {
+			$this->user_id = $_SESSION['user_id'];
 			$this->logged_in = true;
 		} else {
 			unset($this->user_id);

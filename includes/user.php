@@ -8,6 +8,7 @@ class User {
 	public $classe;
 	public $login;
 	public $password;
+	public $count;
 
 	public static function find_all() {
 		return self::find_by_sql("SELECT * FROM user");
@@ -53,6 +54,19 @@ class User {
 			return "";
 		}
 	}
+	public static function get_the_top_x($max = "10") {
+		global $database;
+		$sql_get_top_rank = "SELECT nom, prenom,classe, COUNT(user_id) as count ";
+		$sql_get_top_rank .= "FROM checkin AS c ";
+		$sql_get_top_rank .= "INNER JOIN user ON user.id = c.user_id ";
+		$sql_get_top_rank .= "GROUP BY user_id ORDER BY count DESC";
+		$result_set2 = $database -> query($sql_get_top_rank);
+		$object_array2 = array();
+		while ( $row = $database->fetch_array($result_set2) ) {
+			$object_array2[] = self::instantiate($row);
+		}
+		return $object_array2;
+	}
 	private static function instantiate ($record) {
 		$object = new self;
 		foreach($record as $attribute=>$value){
@@ -62,7 +76,6 @@ class User {
 		}
 		return $object;
 	}
-
 	private function has_attribute($attribute) {
 	  $object_vars = get_object_vars($this);
 	  return array_key_exists($attribute, $object_vars);

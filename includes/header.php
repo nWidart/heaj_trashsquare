@@ -1,29 +1,16 @@
-<?php 
+<?php
 include_once('includes/db_connect.php');
+require_once('includes/init.php');
 
-if ( isset($_COOKIE["user_id"]) ) {
-
-	$sql = "SELECT * FROM user WHERE id =" . $_COOKIE['user_id'];
-	$query = mysql_query($sql, $connection);
-	$userData = mysql_fetch_array($query);
-
-	$userPrenom = $userData['prenom'];
-	$userNom = $userData['nom'];
-	$userLogin = $userData['login'];
-	$userPassword = $userData['password'];
-	$userId = $userData['id'];
-	$userClasse = $userData['classe'];
-
-
+if($session->is_logged_in()) {
 	$sql_score = "SELECT user_id,COUNT(*) ";
 	$sql_score .= "FROM checkin ";
-	$sql_score .= "WHERE user_id=" . $_COOKIE["user_id"];
-	//$sql_score .= "WHERE user_id=13";
-	$score_data = mysql_query($sql_score, $connection);
-	$score = mysql_fetch_array($score_data);
+	$sql_score .= "WHERE user_id=" . $session->user_id;
 
+	$user = User::find_by_id($session ->user_id);
+	$user_score_set = $database->query($sql_score);
+	$score = $database->fetch_array($user_score_set);
 }
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -37,7 +24,6 @@ if ( isset($_COOKIE["user_id"]) ) {
 	<?php } ?>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	
 	<!-- 1140px Grid styles for IE -->
 	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
 
@@ -49,24 +35,23 @@ if ( isset($_COOKIE["user_id"]) ) {
 	<link rel="stylesheet" href="css/progressbar.css" type="text/css" media="screen" />
 	<link rel="icon" type="image/png" href="images/favicon.png" />
 	<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" /><![endif]-->
-	
+
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script>
 	 // DOM ready
 	 $(function() {
-	   
       // Create the dropdown base
       $("<select />").appendTo("nav");
-      
+
       // Create default option "Go to..."
       $("<option />", {
          "selected": "selected",
          "value"   : "",
          "text"    : "Go to..."
       }).appendTo("nav select");
-      
+
       // Populate dropdown with menu items
       $("nav a").each(function() {
        var el = $(this);
@@ -75,15 +60,15 @@ if ( isset($_COOKIE["user_id"]) ) {
            "text"    : el.text()
        }).appendTo("nav select");
       });
-      
+
 	   // To make dropdown actually work
 	   // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
       $("nav select").change(function() {
         window.location = $(this).find("option:selected").val();
       });
-	 
+
 	 });
-	</script>	
+	</script>
 
 
 </head>
@@ -105,10 +90,10 @@ if ( isset($_COOKIE["user_id"]) ) {
 		</div>
 		<div class="threecol last">
 			<ul class="connexion">
-				<?php 
-				if ( isset($_COOKIE['user_id']) ) {
-				?>	
-					<li>Bienvenue <a href="profil.php" class="profile_link"><?= $userPrenom; ?></a></li>
+				<?php
+				if ( $session->is_logged_in() ) {
+				?>
+					<li>Bienvenue <a href="profil.php" class="profile_link"><?= $user->prenom; ?></a></li>
 					<li><a href="deconection.php">Déconnexion</a></li>
 				<?php } else { ?>
 					<li><a href="login.php">Login</a></li>

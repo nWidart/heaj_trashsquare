@@ -1,23 +1,21 @@
 <?php
-// require_once('includes/init.php');
+require_once('includes/init.php');
 
 
-	if(!isset($_COOKIE["user_id"])) {
+	if( !$session->is_logged_in() ) {
 		header( "location: login.php" );
 		exit();
 	}
 ?>
 <?php $page_title = "Trashsquare | Profil"; ?>
 
-<?php include('includes/header.php'); 
-include('includes/functions.php'); ?>
-<?php 
+<?php include('includes/header.php'); ?>
+<?php
 $sql_get_top_rank = "SELECT nom, prenom,classe, COUNT(user_id) as count ";
 $sql_get_top_rank .= "FROM checkin AS c ";
 $sql_get_top_rank .= "INNER JOIN user ON user.id = c.user_id ";
 $sql_get_top_rank .= "GROUP BY user_id ORDER BY count DESC LIMIT 10";
 $query_top_rank = mysql_query($sql_get_top_rank);
-//$top_rank = mysql_fetch_array($query_top_rank);
 ?>
 
 <div class="container contenu">
@@ -25,11 +23,10 @@ $query_top_rank = mysql_query($sql_get_top_rank);
 		<?php include('includes/sidebar-userInfo.php'); ?>
 		<div class="sixcol">
 			<h2>Profil</h2>
-               
 			<span class="poubelle">Votre Score</span>
 			<p class="level"><?php echo get_the_titre( $score[1] ); ?></p>
 			<div class="ui-progress-bar ui-container" id="progress_bar">
-				<?php 
+				<?php
 					if ( $score[1] <= 10 ) {
 						$bar_width = $score[1] . "0";
 					} else {
@@ -42,15 +39,14 @@ $query_top_rank = mysql_query($sql_get_top_rank);
              	 	</span>
             	</div>
           	</div><!-- end progress bar -->
-          	
+
           	<div class="scores">
           		<table>
           			<tr>
-          				<th><img src="images/icn_trash.png" alt="Trash" /></th>
-                              <th><img src="images/icn_badge.png" alt="Badge" /></th>
-                              <th><img src="images/icn_stat.png" alt="Stat" /></th>
+						<th><img src="images/icn_trash.png" alt="Trash" /></th>
+						<th><img src="images/icn_badge.png" alt="Badge" /></th>
+						<th><img src="images/icn_stat.png" alt="Stat" /></th>
           			</tr>
-          			
           			<?php $n = 1; ?>
                          <?php while ($top_rank = mysql_fetch_array($query_top_rank)) { ?>
                          <tr>
@@ -69,52 +65,9 @@ $query_top_rank = mysql_query($sql_get_top_rank);
           		<a href="map.php"><img src="images/blue-arrow.png" alt="Locaux" /> Voir tous les locaux</a>
           		<a href="rank.php"><img src="images/blue-arrow.png" alt="Locaux" /> Voir le classement</a>
           	</div>
-          
-		</div>
-		<div class="threecol last">
-               <?php 
-					if ( isset($userId) ) {
-				   ?>
-				<h2>Badges reçus</h2>
 
-				<?php 
-				if ( $score[1] > 1 ) { ?>
-				<div class="grade first">
-					<img src="images/lvl2.png" alt="lvl2" />
-					<p><span>Initié</span>
-					Tu as utilisé les poubelles de recyclage.</p>
-				</div>
-				<?php } if ( $score[1] > 2 ) { ?>
-				<div class="grade">
-					<img src="images/lvl1.png" alt="lvl1" />
-					<p><span>Débutant</span>
-					Tu as jeté 2 déchets durant les heures de cours.</p>
-				</div>
-				<?php } if ( $score[1] > 4 ) { ?>
-				<div class="grade">
-					<img src="images/lvl3.png" alt="lvl3" />
-					<p><span>Explorateur</span>
-					Tu as jeté plus de 4 déchets au total.</p>
-				</div>
-				<?php } if ( $score[1] > 8 ) { ?>
-				<div class="grade">
-					
-					<img src="images/lvl4.png" alt="lvl4" />
-					<p><span>Aventurier</span>
-					Tu as jeté plus de 8 déchets au total.</p>
-				</div>
-				<?php } if ( $score[1] > 12 ) { ?>
-				<div class="grade">
-					<img src="images/lvl5.png" alt="lvl5" />
-					<p><span>Mr. Propre</span>
-					Tu as jeté plus de 12 déchets au total.</p>
-				</div>
-				<?php } ?>
-
-				<?php 
-					} 
-					?>
 		</div>
+		<?php include('includes/badges.php'); ?>
 	</div>
 </div>
 
