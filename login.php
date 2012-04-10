@@ -3,6 +3,7 @@ require_once('includes/init.php');
 
 if ($session->is_logged_in()) {
 	header( "location: profil.php" );
+	exit();
 }
 
 if ( isset($_POST['submit']) ) {

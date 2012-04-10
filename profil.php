@@ -1,17 +1,15 @@
 <?php
-// require_once('includes/init.php');
-
-
-	if(!isset($_COOKIE["user_id"])) {
-		header( "location: login.php" );
-		exit();
-	}
+require_once('includes/init.php');
+if (!$session->is_logged_in()) {
+	header( "location: login.php" );
+	exit();
+}
 ?>
 <?php $page_title = "Trashsquare | Profil"; ?>
 
-<?php include('includes/header.php'); 
-include('includes/functions.php'); ?>
-<?php 
+<?php include('includes/header.php');
+//include('includes/functions.php'); ?>
+<?php
 $sql_get_top_rank = "SELECT nom, prenom,classe, COUNT(user_id) as count ";
 $sql_get_top_rank .= "FROM checkin AS c ";
 $sql_get_top_rank .= "INNER JOIN user ON user.id = c.user_id ";
@@ -25,11 +23,10 @@ $query_top_rank = mysql_query($sql_get_top_rank);
 		<?php include('includes/sidebar-userInfo.php'); ?>
 		<div class="sixcol">
 			<h2>Profil</h2>
-               
 			<span class="poubelle">Votre Score</span>
 			<p class="level"><?php echo get_the_titre( $score[1] ); ?></p>
 			<div class="ui-progress-bar ui-container" id="progress_bar">
-				<?php 
+				<?php
 					if ( $score[1] <= 10 ) {
 						$bar_width = $score[1] . "0";
 					} else {
@@ -42,7 +39,6 @@ $query_top_rank = mysql_query($sql_get_top_rank);
              	 	</span>
             	</div>
           	</div><!-- end progress bar -->
-          	
           	<div class="scores">
           		<table>
           			<tr>
@@ -50,7 +46,6 @@ $query_top_rank = mysql_query($sql_get_top_rank);
                               <th><img src="images/icn_badge.png" alt="Badge" /></th>
                               <th><img src="images/icn_stat.png" alt="Stat" /></th>
           			</tr>
-          			
           			<?php $n = 1; ?>
                          <?php while ($top_rank = mysql_fetch_array($query_top_rank)) { ?>
                          <tr>

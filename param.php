@@ -1,23 +1,21 @@
-
-<?php 
+<?php
 include_once('includes/db_connect.php');
-include_once('includes/functions.php');
+// include_once('includes/functions.php');
 
 if(!isset($_COOKIE["user_id"]))
 {
      header( "location: login.php" );
-     
 } else {
 	if ( isset($_POST['submit']) ) {
 		$stripdonnees = strip($_POST['nom'],$_POST['prenom'],$_POST['classe']);
 		$message = "";
 		if ( empty($stripdonnees['nom']) )
 		 {
-			 $message .= "Votre nom ne peut pas etre vide.<br />" ; 
-		 } 
-		 if ( empty($stripdonnees['prenom']) ) 
+			 $message .= "Votre nom ne peut pas etre vide.<br />" ;
+		 }
+		 if ( empty($stripdonnees['prenom']) )
 		 {
-			 $message .= "Votre prenom ne peut pas etre vide.<br />" ; 
+			 $message .= "Votre prenom ne peut pas etre vide.<br />" ;
 		 }
 		 if ( !preg_match("/^[1-3]+[A-Z]{3}[1-3]/",$stripdonnees['classe']) ) {
 		 	$message .= "Merci d'entrez une classe correcte.";
@@ -28,11 +26,10 @@ if(!isset($_COOKIE["user_id"]))
 		 			`prenom` = '" . $stripdonnees['prenom'] . "',
 		 			`classe` = '" . $stripdonnees['classe'] . "'
 		 			WHERE id=" . $_COOKIE["user_id"];
-		 	
 		 	mysql_query($sql) or die (mysql_error());
 		 	$message = '<span class="succes">Profil mis &agrave; jour!</span>';
 		 }
-	} 
+	}
 
 
 }
@@ -52,7 +49,7 @@ $donnees = mysql_fetch_array($reponse);
 		<div class="sixcol">
 			<h2>Profil</h2>
 			<span class="poubelle">Votre Score</span>
-			<?php 
+			<?php
 				if ( $score[1] <= 10 ) {
 					$bar_width = $score[1] . "0";
 				} else {
@@ -66,14 +63,12 @@ $donnees = mysql_fetch_array($reponse);
              	 	</span>
             	</div>
           	</div><!-- end progress bar -->
-			
 			<div class="param">
 				<? if(isset($message)) { ?>
 				<p>
 				<?= $message; ?>
 				</p>
 				<? } ?>
-				
 				<form name="s_profil" method="post" action="param.php">
 				<fieldset>
 					<legend>Profil</legend>
@@ -99,15 +94,14 @@ $donnees = mysql_fetch_array($reponse);
 				</form>
 
 			</div>
-			
 		</div>
 		<div class="threecol last">
-               <?php 
+               <?php
 					if ( isset($userId) ) {
 				   ?>
 				<h2>Badges reçus</h2>
 
-				<?php 
+				<?php
 				if ( $score[1] > 1 ) { ?>
 				<div class="grade first">
 					<img src="images/lvl2.png" alt="lvl2" />
@@ -128,7 +122,6 @@ $donnees = mysql_fetch_array($reponse);
 				</div>
 				<?php } if ( $score[1] > 8 ) { ?>
 				<div class="grade">
-					
 					<img src="images/lvl4.png" alt="lvl4" />
 					<p><span>Aventurier</span>
 					Tu as jeté plus de 8 déchets au total.</p>
@@ -141,8 +134,8 @@ $donnees = mysql_fetch_array($reponse);
 				</div>
 				<?php } ?>
 
-				<?php 
-					} 
+				<?php
+					}
 					?>
 		</div>
 	</div>
