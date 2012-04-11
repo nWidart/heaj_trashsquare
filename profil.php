@@ -1,11 +1,10 @@
 <?php
 require_once('includes/init.php');
-
-
 	if( !$session->is_logged_in() ) {
 		header( "location: login.php" );
 		exit();
 	}
+
 ?>
 <?php $page_title = "Trashsquare | Profil"; ?>
 
@@ -62,8 +61,7 @@ $query_top_rank = mysql_query($sql_get_top_rank);
                          </tr>
                        <?php } ?>
           		</table>
-          		<a href="map.php"><img src="images/blue-arrow.png" alt="Locaux" /> Voir tous les locaux</a>
-          		<a href="rank.php"><img src="images/blue-arrow.png" alt="Locaux" /> Voir le classement</a>
+          		<a href="rank.php"><img src="images/blue-arrow.png" alt="Locaux" /> Voir le classement complet.</a>
           	</div>
 
 		</div>

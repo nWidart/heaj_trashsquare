@@ -45,7 +45,7 @@ class MySQLDatabase {
 	/**
 	 * Perform a sql statement
 	 * @param  string $sql the sql statement
-	 * @return string      the results
+	 * @return array      the results
 	 */
 	public function query($sql) {
 		$this -> last_query = $sql;

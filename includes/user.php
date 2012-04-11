@@ -2,20 +2,27 @@
 require_once(LIB_PATH.DS.'database.php');
 
 class User {
+	protected static $table_name="user";
+	protected static $db_fields = array('id', 'nom', 'prenom', 'classe', 'login', 'password');
+
 	public $id;
 	public $nom;
 	public $prenom;
 	public $classe;
 	public $login;
 	public $password;
-	public $count;
+
+	public $score;
+
+
 
 	public static function find_all() {
-		return self::find_by_sql("SELECT * FROM user");
+		return self::find_by_sql("SELECT * FROM ".self::$table_name);
 	}
 
 	public static function find_by_id($id=0) {
-		$result_array = self::find_by_sql("SELECT * FROM user WHERE id={$id} LIMIT 1");
+		$result_array = self::find_by_sql("SELECT * FROM " . self::$table_name . " WHERE id={$id} LIMIT 1");
+		self::instantiate($result_array);
 		return !empty($result_array) ? array_shift($result_array) : false;
 	}
 
@@ -33,7 +40,7 @@ class User {
 		global $database;
 		$login = $database->escape_value($login);
 		$password = $database -> escape_value($password);
-		$sql = "SELECT * FROM user ";
+		$sql = "SELECT * FROM ". self::$table_name;
 		$sql .= "WHERE login = '{$login}' ";
 		$sql .= "AND password = '{$password}' ";
 		$sql .= "LIMIT 1";
@@ -54,18 +61,16 @@ class User {
 			return "";
 		}
 	}
-	public static function get_the_top_x($max = "10") {
+
+
+	public function the_user_score($user_id) {
 		global $database;
-		$sql_get_top_rank = "SELECT nom, prenom,classe, COUNT(user_id) as count ";
-		$sql_get_top_rank .= "FROM checkin AS c ";
-		$sql_get_top_rank .= "INNER JOIN user ON user.id = c.user_id ";
-		$sql_get_top_rank .= "GROUP BY user_id ORDER BY count DESC";
-		$result_set2 = $database -> query($sql_get_top_rank);
-		$object_array2 = array();
-		while ( $row = $database->fetch_array($result_set2) ) {
-			$object_array2[] = self::instantiate($row);
-		}
-		return $object_array2;
+		$sql_score = "SELECT user_id,COUNT(*) ";
+		$sql_score .= "FROM checkin ";
+		$sql_score .= "WHERE user_id=" . $user_id;
+		$score_data = $database->query($sql_score);
+		$this->score = $database->fetch_array($score_data);
+		return $this->score;
 	}
 	private static function instantiate ($record) {
 		$object = new self;
@@ -77,11 +82,54 @@ class User {
 		return $object;
 	}
 	private function has_attribute($attribute) {
-	  $object_vars = get_object_vars($this);
-	  return array_key_exists($attribute, $object_vars);
+		$object_vars = get_object_vars($this);
+		return array_key_exists($attribute, $object_vars);
 	}
 
+	public function save() {
+		// A new record won't have an id yet.
+		return isset($this->id) ? $this->update() : $this->create();
+	}
+
+	public function create() {
+		global $database;
+		$attributes= $this->sanitized_attributes();
+		$sql = "INSERT INTO " .self::$table_name." (";
+		$sql .= join(", ", array_keys($attributes));
+		$sql .= ") VALUES ('";
+		$sql .= join("', '", array_values($attributes));
+		$sql .= "')";
+		if($database->query($sql)) {
+			$this->id = $database->insert_id();
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public function update() {
+		global $database;
+		$sql = "UPDATE ".self::$table_name." SET";
+		$sql .= " `nom` = '" . $database->escape_value($this->nom) . "',";
+		$sql .= " `prenom` = '" . $database->escape_value($this->prenom) . "',";
+		$sql .= " `classe` = '" . $database->escape_value($this->classe) . "'";
+		$sql .= " WHERE id=" . $database->escape_value($this->id);
+		// $database->query($sql);
+		// return ($database->affected_rows() == 1) ? true : false;
+		return $sql;
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 ?>

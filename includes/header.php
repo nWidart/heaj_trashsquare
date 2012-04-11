@@ -1,15 +1,11 @@
 <?php
-include_once('includes/db_connect.php');
-require_once('includes/init.php');
+include_once('includes/init.php');
 
-if($session->is_logged_in()) {
-	$sql_score = "SELECT user_id,COUNT(*) ";
-	$sql_score .= "FROM checkin ";
-	$sql_score .= "WHERE user_id=" . $session->user_id;
+if ( $session->is_logged_in() ) {
 
-	$user = User::find_by_id($session ->user_id);
-	$user_score_set = $database->query($sql_score);
-	$score = $database->fetch_array($user_score_set);
+	$user = new User();
+	$the_user = $user->find_by_id($session->user_id);
+	$score = $user->the_user_score($session->user_id);
 }
 ?>
 <!doctype html>
@@ -35,13 +31,13 @@ if($session->is_logged_in()) {
 	<link rel="stylesheet" href="css/progressbar.css" type="text/css" media="screen" />
 	<link rel="icon" type="image/png" href="images/favicon.png" />
 	<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" /><![endif]-->
-
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script>
 	 // DOM ready
 	 $(function() {
+
       // Create the dropdown base
       $("<select />").appendTo("nav");
 
@@ -93,7 +89,7 @@ if($session->is_logged_in()) {
 				<?php
 				if ( $session->is_logged_in() ) {
 				?>
-					<li>Bienvenue <a href="profil.php" class="profile_link"><?= $user->prenom; ?></a></li>
+					<li>Bienvenue <a href="profil.php" class="profile_link"><?= $the_user->nom_first_letter_prenom(); ?></a></li>
 					<li><a href="deconection.php">Déconnexion</a></li>
 				<?php } else { ?>
 					<li><a href="login.php">Login</a></li>

@@ -1,9 +1,15 @@
 <?php
-require_once('includes/init.php');
 
-if ( !$session->is_logged_in() ) {
+include_once('includes/init.php');
+include_once('includes/db_connect.php');
+// include_once('includes/functions.php');
+
+if( !$session->is_logged_in() )
+{
      header( "location: login.php" );
-} else {
+}
+else
+{
 	if ( isset($_POST['submit']) ) {
 		$stripdonnees = strip($_POST['nom'],$_POST['prenom'],$_POST['classe']);
 		$message = "";
@@ -15,25 +21,20 @@ if ( !$session->is_logged_in() ) {
 		 {
 			 $message .= "Votre prenom ne peut pas etre vide.<br />" ;
 		 }
-		 if ( !preg_match("/^[1-3]+[A-Z]{3}[1-3]/",$stripdonnees['classe']) ) {
+		 if ( !preg_match("/^[1-3][A-Z]{3}[1-3]/",$stripdonnees['classe']) ) {
 		 	$message .= "Merci d'entrez une classe correcte.";
 		 }
 		 else {
-		 	$sql = "UPDATE user
-		 			SET `nom` = '" . $stripdonnees['nom'] . "',
-		 			`prenom` = '" . $stripdonnees['prenom'] . "',
-		 			`classe` = '" . $stripdonnees['classe'] . "'
-		 			WHERE id=" . $_COOKIE["user_id"];
-		 	$database->query($sql);
+		 	$the_user->nom = $stripdonnees['nom'];
+		 	$the_user->prenom = $stripdonnees['prenom'];
+		 	$the_user->classe = $stripdonnees['classe'];
+		 	$the_user->update();
 		 	$message = '<span class="succes">Profil mis &agrave; jour!</span>';
 		 }
 	}
 }
 ?>
-
-
 <?php include('includes/header.php'); ?>
-
 <div class="container contenu">
 	<div class="row">
 		<?php include('includes/sidebar-userInfo.php'); ?>
@@ -64,18 +65,18 @@ if ( !$session->is_logged_in() ) {
 				<fieldset>
 					<legend>Profil</legend>
 					<label for="nom">Nom:</label>
-					<input type="text" name="nom" id="nom" value="<?php echo $user->nom; ?>" alt="Nom" title="Entrez votre nom de famille"/><br />
+					<input type="text" name="nom" id="nom" value="<?php echo $the_user->nom; ?>" alt="Nom" title="Entrez votre nom de famille"/><br />
 					<label for="prenom">Pr&eacute;nom:</label>
-					<input type="text" name="prenom" id="prenom" value="<?php echo $user->prenom; ?>" alt="Prenom" title="Entrez votre prénom"/>
+					<input type="text" name="prenom" id="prenom" value="<?php echo $the_user->prenom; ?>" alt="Prenom" title="Entrez votre prénom"/>
 					<label for="classe">Classe:</label>
-					<input type="text" name="classe" id="classe" value="<?php echo $user->classe; ?>" alt="Classe" title="Entrez votre classe"/>
+					<input type="text" name="classe" id="classe" value="<?php echo $the_user->classe; ?>" alt="Classe" title="Entrez votre classe"/>
 				</fieldset>
 				<fieldset>
 					<legend>Champs fixes</legend>
 					<label for="login">Login:</label>
-					<input disabled type="text" name="login" value="<?php echo $user->login; ?>" alt="login" title="login"/><br />
+					<input disabled type="text" name="login" value="<?php echo $the_user->login; ?>" alt="login" title="login"/><br />
 					<label for="mdp">Mot de passe:</label>
-					<input disabled type="text" name="mdp" value="<?php echo $user->password; ?>" alt="mot de passe" title="mdp"/>
+					<input disabled type="text" name="mdp" value="<?php echo $the_user->password; ?>" alt="mot de passe" title="mdp"/>
 				</fieldset>
 				<fieldset>
 					<legend>Votre score!</legend>
