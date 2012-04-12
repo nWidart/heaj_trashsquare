@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<!-- OPEN html -->
+<html dir="ltr" lang="en-US">
+<!-- ability - A Premium Wordpress Theme designed and coded by Ed Cousins | www.swiftpsd.com / www.edcousins.com -->
+
+<!-- OPEN head -->
+<head>
+
+	<!-- Site Meta -->
+	
+	
+	<!-- Site Title -->
+	<title>Saviour | A Responsive Creative Template</title>
+
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="./favicon.ico" />
+
+	<!-- LOAD Stylesheets -->
+	<link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+	<script>
+		var isiPad = navigator.userAgent.match(/iPad/i) != null;
+		if (!isiPad) {
+			document.write("<link rel="stylesheet" type="text/css" media="screen" href="./css/media.css" />");
+		}
+	</script>
+	<link rel="stylesheet" type="text/css" media="all" href="./css/nivo-slider.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="./css/prettyPhoto.css" />
+  	<link rel="stylesheet" type="text/css" media="screen and (max-width: 768px)" href="./css/media-768.css"  />
+	
+	<!-- LOAD Font -->
+	<link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
+	
+	<!-- LOAD JavaScript Files -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script src="./js/detectmobilebrowser.js"></script>
+	<script src="./js/jquery.hoverIntent.minified.js"></script>
+	<script src="./js/superfish.js"></script>
+	<script src="./js/jquery.nivo.slider.js"></script>
+	<script src="./js/jquery.prettyPhoto.js"></script>
+	<script src="./js/jquery.twitter.js"></script>
+	<script src="./js/functions.js"></script>
+	
+	<!-- LOAD Font -->
+	<link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+	
+    <!-- Legacy HTML5 Support -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<script>
+		jQuery(document).ready(function() {
+		    // Homepage slider
+	        jQuery('#slider').nivoSlider({
+	        	effect: 'random',
+	            slices: 15, // For slice animations
+	            boxCols: 8, // For box animations
+	            boxRows: 4, // For box animations
+	            animSpeed: 500, // Slide transition speed
+	            pauseTime:  5000,
+	            startSlide: 0, // Set starting Slide (0 index)
+
+	            directionNav: true, // Next & Prev navigation
+	            directionNavHide: false, // Only show on hover
+	            controlNav: true, // 1,2,3... navigation
+	            controlNavThumbs: false, // Use thumbnails for Control Nav
+	            controlNavThumbsFromRel: true, // Use image rel for thumbs
+	            controlNavThumbsSearch: '.jpg', // Replace this with...
+	            controlNavThumbsReplace: '_thumb.jpg', // ...this in thumb Image src
+	            keyboardNav: true, // Use left & right arrows
+	            pauseOnHover: true, // Stop animation while hovering
+	            manualAdvance: false, // Force manual transitions
+	            captionOpacity: 0, // Universal caption opacity
+	            prevText: 'Prev', // Prev directionNav text
+	            nextText: 'Next', // Next directionNav text
+	            borderRadius: 0
+	        });
+	    });
+    </script>
+	
+<!-- CLOSE head -->
+<meta charset="UTF-8"></head>
+
+<!-- OPEN Body -->
+<body>
+
+	<!-- OPEN #container -->
+	<div id="container">
+		
+		<!-- OPEN .header-wrap -->
+		<section class="header-wrap">
+
+			<!-- OPEN header -->
+			<header>
+
+				<div id="logo">
+				   	<a href="./index.html"><img src="./images/logo.png" alt="Saviour"/></a>
+				</div>
+				
+			<!-- CLOSE header -->
+			</header>
+
+			<!-- OPEN #main-navigation -->
+			<nav id="main-navigation">
+				
+				<div class="menu-header-navigation-container">
+					<ul id="menu-header-navigation" class="menu">
+						<li><a href="./index.html">Home</a>
+							<ul class="sub-menu">
+								<li><a href="./index.html">Home (Classic Slider)</a></li>
+								<li><a href="./index-video-slider.html">Home (Video Slider)</a></li>
+							</ul>
+						</li>
+						<li><a href="./portfolio-2-column.html">Portfolio</a>
+							<ul class="sub-menu">
+								<li><a href="./portfolio-2-column.html">Portfolio (2 Column)</a></li>
+								<li><a href="./portfolio-3-column.html">Portfolio (3 Column)</a></li>
+								<li><a href="./portfolio-4-column.html">Portfolio (4 Column)</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Features</a>
+							<ul class="sub-menu">
+								<li><a href="#">Fully Responsive</a></li>
+								<li><a href="#">Optimized for iPhone</a></li>
+								<li><a href="#">Unlimited Colour Schemes</a></li>
+								<li><a href="#">Extensive Theme Options</a></li>
+								<li><a href="#">18 Custom Fonts</a></li>
+								<li><a href="#">12 Page Templates</a></li>
+								<li><a href="#">20+ Shortcodes</a></li>
+								<li><a href="#">Dynamic Contact Form</a></li>
+								<li><a href="#">Complete Documentation</a></li>
+								<li><a href="#">Layered PSDs</a></li>
+								<li><a href="#">Custom Widgets</a></li>
+							</ul>
+						</li>
+						<li><a href="full-width-with-posts.html">Templates</a>
+							<ul class="sub-menu">
+								<li><a href="./blog.html">Blog (Right Sidebar)</a></li>
+								<li><a href="./blog-left-sidebar.html">Blog (Left Sidebar)</a></li>
+								<li><a href="./blog-full-width.html">Blog (Full Width)</a></li>
+								<li><a href="./full-width.html">Full Width</a></li>
+								<li><a href="./full-width-with-portfolio.html">Full Width (w/ Portfolio)</a></li>
+								<li><a href="./full-width-with-recent-posts.html">Full Width (w/ Recent Posts)</a></li>
+								<li><a href="./full-width-with-gallery.html">Full Width (w/ Gallery)</a></li>
+							</ul>
+						</li>
+						<li class="selected"><a href="./styles.html">Styles</a></li>
+						<li><a href="./contact.html">Contact</a></li>
+					</ul>
+				</div>
+			
+			<!-- CLOSE #main-navigation -->
+			</nav>
+
+			<!-- OPEN #mobile-navigation -->
+			<nav id="mobile-navigation">
+				
+				<select name="page-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> 
+					<option value="">Go to page</option>
+					<option value="index.html">Home</option>
+					<option value="blog-full-width.html">Blog (Full Width)</option>
+					<option value="blog-left-sidebar.html">Blog (Left Sidebar)</option>
+					<option value="blog.html">Blog (Right Sidebar)</option>
+					<option value="contact.html">Contact</option>
+					<option value="full-width.html">Full Width</option>
+					<option value="full-width-with-gallery.html">Full Width (w/ Gallery)</option>
+					<option value="full-with-with-portfolio.html">Full Width (w/ Portfolio)</option>
+					<option value="full-width-with-recent-posts.html">Full Width (w/ Recent Posts)</option>
+					<option value="index-video-slider.html">Home (Video Slider)</option>
+					<option value="portfolio-2-column.html">Portfolio (2 Column)</option>
+					<option value="portfolio-3-column.html">Portfolio (3 Column)</option>
+					<option value="portfolio-4-column.html">Portfolio (4 Column)</option>
+					<option selected="selected" value="styles.html">Shortcodes</option>
+				</select>
+			
+			<!-- CLOSE #mobile-navigation -->
+			</nav>
+		
+		<!-- CLOSE .header-wrap -->
+		</section>
+
+		<!-- OPEN .content-wrap -->
+		<section class="content-wrap">
+			
+			<!-- OPEN .main-wrap -->
+			<section class="main-wrap">	
+
+				<div class="heading">
+					<h1>Shortcodes</h1>
+					<ul class="social-icons">
+						<li class="twitter"><a href="http://www.twitter.com/edcousins">Twitter</a></li>
+						<li class="facebook"><a href="http://www.facebook.com/pages/SwiftPSDcom/141939472539634">Facebook</a></li>
+						<li class="google-plus"><a href="https://plus.google.com/107781553371279196857/posts">Google+</a></li>
+						<li class="forrst"><a href="http://www.forrst.com/Swift">Forrst</a></li>
+						<li class="dribbble"><a href="http://www.dribbble.com/edcousins">Dribbble</a></li>
+					</ul>
+				</div>
+				
+				<!-- OPEN .full-width .page .clear -->
+				<section class="full-width page clear" id="125">
+
+					<div class="entry">
+
+						<div class="one_half">
+
+							<h2>Alerts</h2>
+							<div class="alert clear">Alert!</div>
+							<div class="alert red">This is a severe alert!</div>
+							<div class="alert green">This is a helpful note</div>
+							<div class="alert blue">This is general information</div>
+						
+						</div>
+						<div class="one_half last">
+							<h2>Buttons</h2>
+							<p>
+								<a class="button blue" href="#"><span>Button</span></a>
+								<a class="button red" href="#"><span>Button</span></a>
+								<a class="button green" href="#"><span>Button</span></a>
+								<a class="button orange" href="#"><span>Button</span></a>
+								<a class="button yellow" href="#"><span>Button</span></a>
+								<a class="button pink" href="#"><span>Button</span></a>
+								<a class="button purple" href="#"><span>Button</span></a>
+								<a class="button lightblue" href="#"><span>Button</span></a>
+								<a class="button turquoise" href="#"><span>Button</span></a>
+								<a class="button black" href="#"><span>Button</span></a>
+								<a class="button grey" href="#"><span>Button</span></a>
+								<a class="button white" href="#"><span>Button</span></a>
+						</div>
+						
+						<div class="clearboth"></div>
+						
+						<h2>Columns</h2>
+					
+						<div class="one_half">
+							Brace yourselves gentlemen. According to the gas chromatograph, the secret ingredient isâ€¦ Love!? Who&#8217;s been screwing with this thing? I&#8217;m normally not a praying man, but if you&#8217;re up there, please save me, Superman. Kids, you tried your best and you failed miserably. The lesson is, never try. Beer. Now there&#8217;s a temporary solution. You know, the one with all the well meaning rules that don&#8217;t work out in real life, uh, Christianity. â€¦And the fluffy kitten played with that ball of string all through the night. On a lighter note, a Kwik-E-Mart clerk was brutally murdered last night.
+						</div>
+						<div class="one_half last">
+							Brace yourselves gentlemen. According to the gas chromatograph, the secret ingredient isâ€¦ Love!? Who&#8217;s been screwing with this thing? I&#8217;m normally not a praying man, but if you&#8217;re up there, please save me, Superman. Kids, you tried your best and you failed miserably. The lesson is, never try. Beer. Now there&#8217;s a temporary solution. You know, the one with all the well meaning rules that don&#8217;t work out in real life, uh, Christianity. â€¦And the fluffy kitten played with that ball of string all through the night. On a lighter note, a Kwik-E-Mart clerk was brutally murdered last night.
+						</div>
+	
+						<div class="clearboth"></div>
+
+						<div class="one_third">
+							Can&#8217;t you people take the law into your own hands? I mean, we can&#8217;t be policing the entire city! Donuts. Is there anything they can&#8217;t do? I&#8217;m going to the back seat of my car, with the woman I love, and I won&#8217;t be back for ten minutes! Please do not offer my god a peanut. Kids, kids. I&#8217;m not going to die. That only happens to bad people. I&#8217;m allergic to bee stings. They cause me to, uh, die.
+						</div>
+						<div class="one_third">
+							Can&#8217;t you people take the law into your own hands? I mean, we can&#8217;t be policing the entire city! Donuts. Is there anything they can&#8217;t do? I&#8217;m going to the back seat of my car, with the woman I love, and I won&#8217;t be back for ten minutes! Please do not offer my god a peanut. Kids, kids. I&#8217;m not going to die. That only happens to bad people. I&#8217;m allergic to bee stings. They cause me to, uh, die.
+						</div>
+						<div class="one_third last">
+							Can&#8217;t you people take the law into your own hands? I mean, we can&#8217;t be policing the entire city! Donuts. Is there anything they can&#8217;t do? I&#8217;m going to the back seat of my car, with the woman I love, and I won&#8217;t be back for ten minutes! Please do not offer my god a peanut. Kids, kids. I&#8217;m not going to die. That only happens to bad people. I&#8217;m allergic to bee stings. They cause me to, uh, die.
+						</div>
+
+						<div class="clearboth"></div>
+						
+						<div class="one_fourth">
+							Inflammable means flammable? What a country. They only come out in the night. Or in this case, the day. Remember the time he ate my goldfish? And you lied and said I never had goldfish. Then why did I have the bowl, Bart? *Why did I have the bowl?*
+						</div>
+						<div class="one_fourth">
+							Inflammable means flammable? What a country. They only come out in the night. Or in this case, the day. Remember the time he ate my goldfish? And you lied and said I never had goldfish. Then why did I have the bowl, Bart? *Why did I have the bowl?*
+						</div>
+						<div class="one_fourth">
+							Inflammable means flammable? What a country. They only come out in the night. Or in this case, the day. Remember the time he ate my goldfish? And you lied and said I never had goldfish. Then why did I have the bowl, Bart? *Why did I have the bowl?*
+						</div>
+						<div class="one_fourth last">
+							Inflammable means flammable? What a country. They only come out in the night. Or in this case, the day. Remember the time he ate my goldfish? And you lied and said I never had goldfish. Then why did I have the bowl, Bart? *Why did I have the bowl?*
+						</div>
+		
+						<div class="clearboth"></div>
+		
+						<div class="one_fifth">
+							Beer. Now there&#8217;s a temporary solution. I stand by my racial slur. Look out, Itchy! He&#8217;s Irish! Bart, with $10,000 we&#8217;d be millionaires! We could buy all kinds of useful things likeâ€¦love!
+						</div>
+						<div class="one_fifth">
+							Beer. Now there&#8217;s a temporary solution. I stand by my racial slur. Look out, Itchy! He&#8217;s Irish! Bart, with $10,000 we&#8217;d be millionaires! We could buy all kinds of useful things likeâ€¦love!
+						</div>
+						<div class="one_fifth">
+							Beer. Now there&#8217;s a temporary solution. I stand by my racial slur. Look out, Itchy! He&#8217;s Irish! Bart, with $10,000 we&#8217;d be millionaires! We could buy all kinds of useful things likeâ€¦love!
+						</div>
+						<div class="one_fifth">
+							Beer. Now there&#8217;s a temporary solution. I stand by my racial slur. Look out, Itchy! He&#8217;s Irish! Bart, with $10,000 we&#8217;d be millionaires! We could buy all kinds of useful things likeâ€¦love!
+						</div>
+						<div class="one_fifth last">
+							Beer. Now there&#8217;s a temporary solution. I stand by my racial slur. Look out, Itchy! He&#8217;s Irish! Bart, with $10,000 we&#8217;d be millionaires! We could buy all kinds of useful things likeâ€¦love!
+						</div>
+		
+						<div class="clearboth"></div>
+			
+						<div class="one_sixth">
+							Kids, you tried your best and you failed miserably. The lesson is, never try. Whoa, slow down there, maestro. There&#8217;s a *New* Mexico?
+						</div>
+						<div class="one_sixth">
+							Kids, you tried your best and you failed miserably. The lesson is, never try. Whoa, slow down there, maestro. There&#8217;s a *New* Mexico?
+						</div>
+						<div class="one_sixth">
+							Kids, you tried your best and you failed miserably. The lesson is, never try. Whoa, slow down there, maestro. There&#8217;s a *New* Mexico?
+						</div>
+						<div class="one_sixth">
+							Kids, you tried your best and you failed miserably. The lesson is, never try. Whoa, slow down there, maestro. There&#8217;s a *New* Mexico?
+						</div>
+						<div class="one_sixth">
+							Kids, you tried your best and you failed miserably. The lesson is, never try. Whoa, slow down there, maestro. There&#8217;s a *New* Mexico?
+						</div>
+						<div class="one_sixth last">
+							Kids, you tried your best and you failed miserably. The lesson is, never try. Whoa, slow down there, maestro. There&#8217;s a *New* Mexico?
+						</div>
+
+						<div class="clearboth"></div>
+
+					</div>
+						
+					<!-- CLOSE .page .clear -->
+					</section>
+				
+				
+			<!-- CLOSE .main-wrap -->
+			</section>
+
+			<!-- OPEN #footer-wrap -->
+			<aside id="footer-wrap" class="clear">
+
+				<section class="footer-widgets clear">
+			
+					<div class="col footer1">
+						<section>
+							<h3>Flickr Photos</h3>
+							<div id="flickr">
+								<ul> </ul>
+							</div>
+						</section>
+					</div>
+					
+					<div class="col footer2">
+						<section>
+							<h3>Recent Tweets</h3>
+							<div id="tweets"></div>
+						</section>
+					</div>
+					
+					<div class="col footer3">
+						<section>
+							<h3>Contact Numbers</h3>
+							<div class="textwidget">
+								<p>111-222-333<br />222-333-444</p>
+							</div>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<div class="textwidget">
+								<p><a href="mailto:support@swiftpsd.com">support@swiftpsd.com</a></p>
+							</div>
+						</section>
+						<section>
+							<h3>Address</h3>
+							<div class="textwidget">
+								<p>Apple Computer Inc<br />1 Infinite Loop<br />Cupertino<br />CA 95014</p>
+							</div>
+						</section>
+					</div>
+
+				</section>
+			
+				<footer class="clear">
+					<p>Copyright 2011 | <a href="./index.html" target="_blank">Saviour Theme</a> designed by <a href="http://www.swiftpsd.com" target="_blank">Ed Cousins</a> | Powered by <a href="http://www.wordpress.org" target="_blank">WordPress</a></p>
+				</footer>
+
+			<!-- CLOSE #footer-wrap -->
+			</aside>
+
+		<!-- CLOSE .content-wrap -->
+		</section>
+
+	<!-- CLOSE #container -->
+	</div>
+
+<!-- CLOSE body -->
+</body>
+
+<!-- CLOSE html -->
+</html>

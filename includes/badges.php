@@ -4,13 +4,13 @@
 		<?php
 		if ( $score[1] >= 1 ) { ?>
 		<div class="grade first">
-			<img src="images/lvl2.png" alt="lvl2" />
+			<img src="images/lvl2.png" alt="lvl1" />
 			<p><span>Initié</span>
-			Tu as utilisé les poubelles de recyclage.</p>
+			Tu as utilisé une poubelle de recyclage.</p>
 		</div>
 		<?php } if ( $score[1] > 2 ) { ?>
 		<div class="grade">
-			<img src="images/lvl1.png" alt="lvl1" />
+			<img src="images/lvl1.png" alt="lvl2" />
 			<p><span>Débutant</span>
 			Tu as jeté 2 déchets durant les heures de cours.</p>
 		</div>

@@ -2,10 +2,9 @@
 include_once('includes/init.php');
 
 if ( $session->is_logged_in() ) {
-
-	$user = new User();
-	$the_user = $user->find_by_id($session->user_id);
-	$score = $user->the_user_score($session->user_id);
+	//$user = new User();
+	$the_user = User::find_by_id($session->user_id);
+	$score = $the_user->the_user_score($session->user_id);
 }
 ?>
 <!doctype html>

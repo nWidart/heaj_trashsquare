@@ -1,7 +1,7 @@
 <?php
 
 include_once('includes/init.php');
-include_once('includes/db_connect.php');
+// include_once('includes/db_connect.php');
 // include_once('includes/functions.php');
 
 if( !$session->is_logged_in() )
